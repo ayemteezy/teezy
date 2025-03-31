@@ -378,9 +378,10 @@ export const miniGameQuestions = [
     correctAnswer: 3,
   },
   {
-    question: "Which programming language do I use the most?",
-    options: ["TypeScript", "Python", "C++", "Java"],
-    correctAnswer: 0,
+    question:
+      "Which social media app do I reinstall just to complain about it?",
+    options: ["Instagram", "TikTok", "Twitter", "Reddit"],
+    correctAnswer: 2,
   },
   {
     question: "What is the name of my Spotify playlist?",
@@ -388,89 +389,37 @@ export const miniGameQuestions = [
     correctAnswer: 1,
   },
   {
-    question: "Which project am I currently working on?",
-    options: [
-      "E-commerce app",
-      "Wattpad clone",
-      "AI Chatbot",
-      "Fitness tracker",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "Which game best describes my GTA RP character?",
-    options: [
-      "Need for Speed",
-      "GTA Online",
-      "Euro Truck Simulator",
-      "F1 Racing",
-    ],
+    question: "What programming language do I use the most?",
+    options: ["TypeScript", "Python", "C++", "Java"],
     correctAnswer: 0,
   },
   {
-    question:
-      "What social media platform do I reinstall just to complain about it?",
-    options: ["Instagram", "TikTok", "Twitter", "Reddit"],
-    correctAnswer: 2,
-  },
-  {
-    question: "What is my faction in Torn?",
-    options: ["Dark Matter", "Torn Faction", "Illuminati", "Blood Brothers"],
-    correctAnswer: 1,
-  },
-  {
-    question: "What element of art do I always mention first?",
-    options: ["Perspective", "Illusion", "Composition", "Symmetry"],
-    correctAnswer: 1,
-  },
-  {
-    question: "Which bot hosts my 'Tap to Earn' game?",
-    options: [
-      "@dogecoin_bot",
-      "@iamdog_bot",
-      "@tapmaster_bot",
-      "@crypto_earn_bot",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "What is my go-to ORM for my projects?",
+    question: "What is my go-to ORM?",
     options: ["Prisma", "Drizzle ORM", "TypeORM", "Sequelize"],
     correctAnswer: 1,
   },
   {
-    question: "Which database am I using for real-time features?",
-    options: ["MongoDB", "PostgreSQL", "Neon DB", "Firebase"],
-    correctAnswer: 2,
+    question: "What do I use to host images in my projects?",
+    options: ["Cloudinary", "Firebase Storage", "AWS S3", "UploadThing"],
+    correctAnswer: 3,
   },
   {
-    question: "What is my favorite way to escape the police in GTA RP?",
-    options: [
-      "Hiding in an alley",
-      "Bribing them",
-      "Insane car chases",
-      "Switching cars",
-    ],
-    correctAnswer: 2,
-  },
-  {
-    question:
-      "Which feature am I adding to my Wattpad clone for collaboration?",
-    options: [
-      "Live chat",
-      "Co-writing with roles",
-      "Story AI generator",
-      "Voice narration",
-    ],
+    question: "What UI library do I use in my projects?",
+    options: ["Material UI", "ShadCN", "Chakra UI", "Bootstrap"],
     correctAnswer: 1,
   },
   {
-    question: "What type of content will my Wattpad clone NOT have (for now)?",
-    options: ["Monetization", "Genres", "Bookmarks", "Reading lists"],
-    correctAnswer: 0,
+    question: "Which database do I prefer for real-time functionality?",
+    options: ["MongoDB", "PostgreSQL", "Convex DB", "Firebase"],
+    correctAnswer: 2,
   },
   {
-    question: "What color theme am I using for my portfolio?",
+    question: "What do I struggle with the most?",
+    options: ["Waking up early", "Laundry", "Remembering names", "Directions"],
+    correctAnswer: 1,
+  },
+  {
+    question: "What is my preferred color theme?",
     options: [
       "Black and Red",
       "Black and Blue",
@@ -480,95 +429,49 @@ export const miniGameQuestions = [
     correctAnswer: 1,
   },
   {
-    question: "What am I using to host images in my projects?",
-    options: ["Cloudinary", "Firebase Storage", "AWS S3", "Imgur"],
+    question: "What do I prefer to drink?",
+    options: ["Coffee", "Tea", "Soda", "Juice"],
     correctAnswer: 0,
   },
   {
-    question: "What database am I using for my Wattpad clone?",
-    options: ["Firebase", "Neon DB", "Supabase", "PlanetScale"],
-    correctAnswer: 1,
-  },
-  {
-    question:
-      "What feature am I considering for my Wattpad clone's premium version?",
-    options: [
-      "AI Story Writing",
-      "Offline Reading",
-      "Voice Acting",
-      "NFT Stories",
-    ],
-    correctAnswer: 1,
-  },
-  {
-    question: "What am I adding to my Wattpad clone to enhance engagement?",
-    options: [
-      "Polls & Reader Choices",
-      "NFT-based Stories",
-      "Crypto Rewards",
-      "AI Reviews",
-    ],
-    correctAnswer: 0,
-  },
-  {
-    question: "Which app am I making to track ratings and reviews?",
-    options: [
-      "Game Tracker",
-      "Story Hub",
-      "Review Haven",
-      "All-in-One Rating App",
-    ],
+    question: "Which season do I like the most?",
+    options: ["Summer", "Winter", "Spring", "Rainy"],
     correctAnswer: 3,
   },
   {
-    question: "What kind of lists will my All-in-One Rating App support?",
-    options: [
-      "Only anime",
-      "Only books",
-      "Custom lists",
-      "Friends' recommendations only",
-    ],
-    correctAnswer: 2,
-  },
-  {
-    question: "What am I using to implement my Trello clone?",
-    options: ["Vue.js", "React", "Next.js", "Angular"],
-    correctAnswer: 2,
-  },
-  {
-    question: "What UI library do I use in my projects?",
-    options: ["Material UI", "ShadCN", "Chakra UI", "Bootstrap"],
+    question: "Which do I prefer: movies or series?",
+    options: ["Movies", "Series"],
     correctAnswer: 1,
   },
   {
-    question: "What is the main purpose of my IoT earthquake alarm project?",
-    options: [
-      "To detect intruders",
-      "To predict weather",
-      "To warn about earthquakes",
-      "To measure humidity",
-    ],
+    question: "What type of music do I listen to the most?",
+    options: ["Pop", "Lo-Fi", "Rock", "EDM"],
     correctAnswer: 2,
   },
   {
-    question: "What is my smart voting system missing?",
-    options: [
-      "Biometrics",
-      "Secure encryption",
-      "Offline support",
-      "Multiple voting methods",
-    ],
+    question: "How do I like my pizza?",
+    options: ["With pineapple", "No pineapple"],
     correctAnswer: 0,
   },
   {
-    question: "Which of these is NOT part of my reusable relief box system?",
-    options: [
-      "RFID Access",
-      "GPS Tracking",
-      "Temperature Sensor",
-      "Inventory Management",
-    ],
-    correctAnswer: 2,
+    question: "Which tool do I prefer for version control?",
+    options: ["GitHub", "GitLab", "Bitbucket", "SVN"],
+    correctAnswer: 0,
+  },
+  {
+    question: "Which IDE or code editor do I use the most?",
+    options: ["VS Code", "IntelliJ IDEA", "WebStorm", "Vim"],
+    correctAnswer: 0,
+  },
+  {
+    question: "What is my preferred way of deploying web apps?",
+    options: ["Vercel", "Netlify", "AWS", "DigitalOcean"],
+    correctAnswer: 0,
+  },
+  {
+    question: "Which Linux distro do I like the most?",
+    options: ["Ubuntu", "Arch Linux", "Fedora", "Debian"],
+    correctAnswer: 0,
   },
 ];
 
