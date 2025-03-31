@@ -1,0 +1,16 @@
+{
+  "name": "Teezy",
+  "short_name": "Teezy",
+  "description": "My personal website built with Next.js.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
