@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { FileIcon } from "lucide-react";
 
 import { useScroll } from "@/hooks/use-scroll";

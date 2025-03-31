@@ -5,7 +5,6 @@ import { ProjectCard } from "./project-card";
 import { BlurFade } from "../magicui/blur-fade";
 import ProjectsSkeleton from "./project-skeleton";
 import { SectionHeader } from "../common/section-header";
-import { Particles } from "../magicui/particles";
 
 type RepoData = Repo[] | { error: string };
 
@@ -23,7 +22,7 @@ export default async function Projects() {
         <BlurFade
           inView
           delay={0.75}
-          className="flex flex-col gap-8 lg:px-34 md:px-6  px-4"
+          className="flex flex-col gap-8 lg:px-34 md:px-6 px-4"
         >
           <ProjectsSkeleton />
         </BlurFade>
@@ -41,15 +40,11 @@ export default async function Projects() {
       <BlurFade
         inView
         delay={0.75}
-        className="flex flex-col gap-8 lg:px-34 md:px-6 px-4 md:mb-30 mb-15"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:px-34 md:px-6 px-4 md:mb-30 mb-15"
       >
         {Array.isArray(data) &&
           data.map((project, index) => (
-            <ProjectCard
-              key={index}
-              project={project}
-              className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1"
-            />
+            <ProjectCard key={index} project={project} />
           ))}
       </BlurFade>
     </section>

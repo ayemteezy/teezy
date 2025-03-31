@@ -103,13 +103,7 @@ export const Hero = () => {
         </div>
       </div>
       <Ripple color="#193cb8" mainCircleSize={580} className="-z-10" />
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={75}
-        ease={80}
-        color={color}
-        refresh
-      />
+      <Particles className="absolute inset-0 z-0" quantity={75} color={color} />
     </section>
   );
 };

@@ -38,7 +38,7 @@ export const Books = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-lg" />
                 <p className="absolute bottom-2 px-0.75 hidden group-hover:block text-xs z-10 italic">
-                  "{book.quote}"
+                  &quot;{book.quote}&quot;
                 </p>
 
                 <Badge className="absolute top-1 right-1 z-20 rounded-full bg-primary text-white capitalize">
@@ -74,8 +74,8 @@ export const Books = () => {
         <div className="pl-4 border-l-2 border-primary/20 mt-4">
           <div className="flex flex-col gap-1 italic text-muted-foreground">
             <p className="text-sm">
-              "A reader lives a thousand lives before he dies. The man who never
-              reads lives only one."
+              &quot;A reader lives a thousand lives before he dies. The man who
+              never reads lives only one.&quot;
             </p>
             <span className="text-xs"> — George R.R. Martin</span>
           </div>

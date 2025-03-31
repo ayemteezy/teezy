@@ -57,8 +57,8 @@ export const Passion = () => {
 
     const moveImage = () => {
       setPosition((prev) => {
-        let newX = prev.x + velocity.vx;
-        let newY = prev.y + velocity.vy;
+        const newX = prev.x + velocity.vx;
+        const newY = prev.y + velocity.vy;
         let newVx = velocity.vx;
         let newVy = velocity.vy;
 

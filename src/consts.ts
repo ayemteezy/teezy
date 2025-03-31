@@ -1,4 +1,3 @@
-import { TopTracks } from "./components/about/components/personal-life/components/top-tracks";
 import {
   CodeIcon,
   CoffeeIcon,
@@ -220,7 +219,7 @@ export const hobbies = [
     title: "Traveling",
     icon: GlobeIcon,
     description: "Exploring new places, cultures, and cuisines.",
-    image: "/travel.jpg",
+    image: "/images/travel.jpg",
     detailedInfo: {
       experience: "I love road trips and backpacking adventures.",
       funFact:
@@ -235,7 +234,7 @@ export const hobbies = [
     icon: MusicIcon,
     title: "Music",
     description: "Listening to various genres and discovering new artists.",
-    image: "/music.jpg",
+    image: "/images/music.jpg",
     detailedInfo: {
       experience:
         "I've been a music enthusiast for years, always exploring different sounds.",
@@ -249,7 +248,7 @@ export const hobbies = [
     title: "Watching",
     icon: TvIcon,
     description: "Binge-watching movies, series, and anime.",
-    image: "/watching.jpg",
+    image: "/images/watching.jpg",
     detailedInfo: {
       experience:
         "From Hollywood blockbusters to indie films, I enjoy them all.",
@@ -263,7 +262,7 @@ export const hobbies = [
     title: "Reading",
     icon: BookOpenIcon,
     description: "Diving into novels, manhwa, and manga.",
-    image: "/reading.jpg",
+    image: "/images/reading.jpg",
     detailedInfo: {
       experience: "I read both fiction and non-fiction, especially fantasy.",
       funFact:
@@ -277,7 +276,7 @@ export const hobbies = [
     title: "Gaming",
     icon: Gamepad2Icon,
     description: "Playing video games across different platforms.",
-    image: "/gaming.jpg",
+    image: "/images/gaming.jpg",
     detailedInfo: {
       experience: "Competitive and casual gaming, from FPS to RPGs.",
       funFact: "I once played a game for 12 hours straight.",
@@ -290,28 +289,28 @@ export const hobbies = [
 
 export const books = [
   {
-    image: "/eleceed.png",
+    image: "/images/eleceed.png",
     title: "Eleceed",
     author: "Son Je-Ho (손제호)",
     type: "manhwa",
     quote: "True strength is shown through kindness.",
   },
   {
-    image: "/paper-towns.png",
+    image: "/images/paper-towns.png",
     title: "Paper Towns",
     author: "John Green",
     type: "Novel",
     quote: "A person is simply a person.",
   },
   {
-    image: "/solo-leveling.png",
+    image: "/images/solo-leveling.png",
     title: "Solo Leveling",
     author: "Chugong",
     type: "manhwa",
     quote: "I'll show you what it means to be the strongest hunter.",
   },
   {
-    image: "/blue-period.png",
+    image: "/images/blue-period.png",
     title: "Blue Period",
     author: "Tsubasa Yamaguchi",
     type: "manga",

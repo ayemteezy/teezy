@@ -28,12 +28,15 @@ export default async function send(values: z.infer<typeof contactSchema>) {
       text: message,
     });
 
-    if (error) {
+    if (!data && error) {
       return { error: error.message || "Failed to send email" };
     }
 
     return { success: "Your message has been sent successfully!" };
   } catch (err) {
-    return { error: "An unexpected error occurred. Please try again later." };
+    return {
+      error: "An unexpected error occurred. Please try again later.",
+      err,
+    };
   }
 }

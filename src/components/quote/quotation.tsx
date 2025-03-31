@@ -48,8 +48,8 @@ export const Quote = () => {
                 <div className="flex flex-col gap-4">
                   <Separator />
                   <span className="text-xs lg:text-sm italic text-muted-foreground">
-                    "The best code is the code that's easy to delete and
-                    replace." — Programming wisdom I live by
+                    &quot;The best code is the code that&apos;s easy to delete
+                    and replace.&quot; — Programming wisdom I live by
                   </span>
                 </div>
               </div>
