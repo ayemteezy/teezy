@@ -1,18 +1,19 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { toast } from "sonner";
-import { contacts, socialLinks } from "@/consts";
+import { siteConfig } from "@/config/site";
 
-import { ContactForm } from "./contact-form";
+import { Button } from "../ui/button";
 import { BlurFade } from "../magicui/blur-fade";
+import memoji4 from "../../../public/images/memoji4.png";
+import { ExternalLinkIcon, MailIcon } from "lucide-react";
+import { contacts, socialLinks } from "@/consts";
 
 export const ContactInfo = () => {
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
-    toast.success("Copied to clipboard!", {
-      className: "text-blue-500",
-    });
+    toast.success("Copied to clipboard!");
   };
 
   return (
@@ -20,54 +21,63 @@ export const ContactInfo = () => {
       <BlurFade
         inView
         delay={0.5}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:px-34 px-4"
+        className="w-full flex flex-col items-start md:items-center justify-start md:justify-center px-4 lg:px-34"
       >
-        <div>
-          <h3 className="text-xl md:text-2xl font-bold mb-6">
-            Contact Information
-          </h3>
-          <div className="space-y-6 mb-6">
-            {contacts.map((contact) => (
-              <div
-                className="flex items-center cursor-pointer"
-                key={contact.title}
-              >
-                <div className="bg-primary/10 p-4 rounded-full mr-4">
-                  <contact.icon className="size-4" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-sm md:text-base">
-                    {contact.title}
-                  </h4>
-
-                  <p
-                    onClick={() => handleCopy(contact.details)}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {contact.details}
-                  </p>
-                </div>
+        <div className="flex flex-col items-center justify-center">
+          <Image src={memoji4} alt="Person with a smile" className="size-30" />
+          <p className="text-muted-foreground lg:text-base text-sm  max-w-lg text-center">
+            I&apos;m currently available for freelance work and exciting new
+            opportunities. Whether you have a project in mind or just want to
+            say hello, I&apos;d love to hear from you!
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="my-8 w-full md:w-auto flex items-center gap-4"
+          >
+            <a href={`mailto:${siteConfig.links.email}`}>
+              <div className="flex items-center gap-2">
+                <MailIcon className="size-4" />
+                <p>Contact Me</p>
               </div>
-            ))}
-          </div>
-          <h3 className="text-xl md:text-2xl font-bold mb-4">Follow Me</h3>
-          <div className="flex space-x-4">
-            {socialLinks.map((socialLink) => (
-              <Link
-                key={socialLink.name}
-                href={socialLink.link}
-                target="_blank"
-                className="bg-card p-3 rounded-full hover:bg-primary hover:text-white-foreground transition-colors"
+              <ExternalLinkIcon className="font-light size-4 " />
+            </a>
+          </Button>
+        </div>
+        <div className="flex w-full flex-col md:flex-row  justify-center items-start md:items-center gap-2 md:gap-8 my-8">
+          {contacts.map((contact) => (
+            <div className="flex" key={contact.details}>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="cursor-pointer"
+                onClick={() => handleCopy(contact.details)}
               >
-                <socialLink.icon className="size-5" />
-                <span className="sr-only text-sm lg:text-base">
-                  {socialLink.name}
-                </span>
-              </Link>
+                <contact.icon className="size-5 text-primary mr-2" />
+                {contact.details}
+              </Button>
+            </div>
+          ))}
+        </div>
+        {/* Social Links - Show on Desktop Only */}
+        <div className="flex flex-col items-start md:items-center justify-start md:justify-center mt-8">
+          <p className="text-xs text-muted-foreground">Connect with me</p>
+          <div className="flex items-center gap-4 mt-4">
+            {socialLinks.map((socialLink) => (
+              <Button
+                key={socialLink.name}
+                variant="default"
+                size="icon"
+                className="rounded-full bg-transparent cursor-pointer hover:bg-primary"
+                asChild
+              >
+                <a href={socialLink.link}>
+                  <socialLink.icon className="size-5" />
+                </a>
+              </Button>
             ))}
           </div>
         </div>
-        <ContactForm />
       </BlurFade>
     </div>
   );

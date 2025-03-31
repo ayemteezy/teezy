@@ -27,7 +27,6 @@ Create a `.env.local` file in the root directory and add the necessary environme
 GH_ACCESS_TOKEN=your_github_access_token
 GH_USERNAME=your_github_username
 NEXT_PUBLIC_APP_URL=your_app_url
-RESEND_API_KEY=your_resend_api_key
 ```
 
 Modify these values based on your setup.

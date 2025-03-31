@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ContactInfo } from "./contact-info";
 import { useInView } from "react-intersection-observer";
 import { SectionHeader } from "../common/section-header";
-import RetroGrid from "../magicui/retro-grid";
 import { Confetti, type ConfettiRef } from "../magicui/confetti";
+import RetroGrid from "../magicui/retro-grid";
+import { ContactInfo } from "./contact-info";
 
 export const Contact = () => {
   const confettiRef = useRef<ConfettiRef>(null);
@@ -39,7 +39,7 @@ export const Contact = () => {
           <SectionHeader
             title="Get In Touch"
             subtitle="contact"
-            description="Have a project in mind or want to collaborate? Feel free to reach out to me through the form below or via my contact information."
+            description="Have a project in mind or want to collaborate? I'm just one click away."
           />
         </div>
       </div>

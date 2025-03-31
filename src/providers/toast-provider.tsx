@@ -1,16 +1,16 @@
 "use client";
 
-import { Toaster } from "sonner";
 import { useEffect, useState } from "react";
+import { Toaster } from "sonner";
 
 export const ToastProvider = () => {
-  const [mounted, setMounted] = useState(false);
+	const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
-  if (!mounted) return null; // Prevents hydration mismatch
+	if (!mounted) return null; // Prevents hydration mismatch
 
-  return <Toaster position="bottom-right" />;
+	return <Toaster position="bottom-right" />;
 };

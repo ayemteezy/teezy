@@ -1,23 +1,23 @@
 import {
+  AwardIcon,
+  BookOpenIcon,
   CodeIcon,
   CoffeeIcon,
   CpuIcon,
+  Gamepad2Icon,
+  GlobeIcon,
   HeartIcon,
   MailIcon,
   MapPinIcon,
+  MusicIcon,
   PhoneIcon,
   ServerIcon,
-  MusicIcon,
-  BookOpenIcon,
   TvIcon,
-  GlobeIcon,
-  Gamepad2Icon,
-  AwardIcon,
 } from "lucide-react";
 
-import { FiGithub } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
 import { siteConfig } from "./config/site";
 
 export const links = [
@@ -181,17 +181,14 @@ export const techStack = [
 export const contacts = [
   {
     icon: MailIcon,
-    title: "Email",
     details: `${siteConfig.links.email}`,
   },
   {
     icon: PhoneIcon,
-    title: "Phone",
     details: `${siteConfig.contact}`,
   },
   {
     icon: MapPinIcon,
-    title: "Location",
     details: "Caloocan City, Philippines",
   },
 ];
