@@ -34,7 +34,7 @@ export const ProjectCard = ({ project, className, style }: Props) => {
   if (!isClient) {
     return null;
   }
-
+  console.log(`${project.homepageUrl}/social-preview.jpg`);
   return (
     <div className={cn(className)} style={style}>
       <Card className="overflow-hidden h-full flex flex-col pt-0 hover:shadow-lg transition-shadow">
