@@ -341,8 +341,6 @@ export const languages = [
 export const achievements = [
   "Graduated college and officially a fresh graduate.",
   "Built a fullstack website on my own.",
-  "Outran the cops in a high-speed chase in GTA RP.",
-  "Successfully integrated Drizzle ORM with Neon DB and Convex DB.",
 ];
 
 export const bucketList = [
