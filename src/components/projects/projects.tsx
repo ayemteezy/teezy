@@ -1,4 +1,4 @@
-"use client"; // Makes this a Client Component
+"use client";
 
 import { useEffect, useState } from "react";
 import type { Repo } from "@/types";

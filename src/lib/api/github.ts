@@ -1,6 +1,8 @@
+"use server";
+
 import { env } from "@/env.mjs";
 import { Client, type IPinnedRepo } from "get-pinned-repos";
-import type { Repo } from "@/types"; // Ensure Repo type matches expectations
+import type { Repo } from "@/types";
 
 const GH_ACCESS_TOKEN = env.GH_ACCESS_TOKEN;
 const GH_USERNAME = env.GH_USERNAME;
