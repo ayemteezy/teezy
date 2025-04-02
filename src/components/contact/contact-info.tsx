@@ -36,11 +36,11 @@ export const ContactInfo = () => {
             className="my-8 w-full md:w-auto flex items-center gap-4"
           >
             <a href={`mailto:${siteConfig.links.email}`}>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 justify-center">
                 <MailIcon className="size-4" />
                 <p>Contact Me</p>
               </div>
-              <ExternalLinkIcon className="font-light size-4 " />
+              <ExternalLinkIcon className="font-light size-3.5" />
             </a>
           </Button>
         </div>

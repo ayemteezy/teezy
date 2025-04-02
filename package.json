@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "biome": "biome check --write --unsafe ./src",
     "lint": "next lint"
   },
   "dependencies": {
