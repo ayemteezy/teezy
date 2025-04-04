@@ -81,7 +81,7 @@ export const techStack = [
       },
       {
         name: "Next.js",
-        progress: 90,
+        progress: 80,
       },
       {
         name: "TailwindCSS",
@@ -89,11 +89,11 @@ export const techStack = [
       },
       {
         name: "Framer Motion",
-        progress: 90,
+        progress: 65,
       },
       {
         name: "React Native",
-        progress: 90,
+        progress: 75,
       },
     ],
     libTitle: "Frameworks & Libraries",
@@ -121,7 +121,7 @@ export const techStack = [
       },
       {
         name: "Drizzle ORM",
-        progress: 80,
+        progress: 85,
       },
       {
         name: "NeonDB",
@@ -129,7 +129,7 @@ export const techStack = [
       },
       {
         name: "Hono.js",
-        progress: 75,
+        progress: 60,
       },
     ],
     libTitle: "Databases & ORMs",
@@ -166,11 +166,11 @@ export const techStack = [
       },
       {
         name: "Docker",
-        progress: 80,
+        progress: 60,
       },
       {
         name: "CI/CD (GitHub Actions)",
-        progress: 75,
+        progress: 65,
       },
     ],
     libTitle: "Development, Deployment & APIs",
