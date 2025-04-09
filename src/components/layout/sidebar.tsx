@@ -35,7 +35,7 @@ export const Sidebar = () => {
     <div className="inline-flex items-center gap-2 lg:hidden">
       <div className="flex items-center gap-2 ">
         <Button size="lg" asChild>
-          <a href="/docs/resume.pdf" download="resume.pdf">
+          <a href={siteConfig.links.resume} target="_blank">
             <FileIcon className="size-4" />
             <span className="sr-only">Download Resume</span>
           </a>
