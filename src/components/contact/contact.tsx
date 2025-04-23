@@ -26,7 +26,7 @@ export const Contact = () => {
   }, [inView]);
 
   return (
-    <section id="contact" className="relative overflow-visible lg:mb-50 mb-30">
+    <section id="contact" className="relative overflow-visible lg:mb-40 mb-30">
       <RetroGrid className="absolute top-45 md:top-50 lg:-top-15 left-0 w-full  lg:h-[140%] -z-10" />
 
       <div className="relative overflow-visible">
