@@ -47,7 +47,7 @@ export const Header = () => {
               <Button size="lg" asChild>
                 <a href={siteConfig.links.resume} target="_blank">
                   <FileIcon className="size-4" />
-                  <span>Download CV</span>
+                  <span>Resume</span>
                 </a>
               </Button>
             </div>

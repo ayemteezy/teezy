@@ -63,9 +63,9 @@ export const Sidebar = () => {
               ))}
             </nav>
             <div className="mt-auto mb-4 flex flex-col gap-6">
-              <Button size="lg">
+              <Button size="lg" asChild>
                 <a href={siteConfig.links.resume} target="_blank">
-                  Download CV
+                  Resume
                 </a>
               </Button>
               <div className="flex items-center justify-around">
