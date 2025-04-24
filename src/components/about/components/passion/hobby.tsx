@@ -33,7 +33,7 @@ export const Hobby = ({
 }: DraggableHobbyProps) => {
   const [isDragging, setIsDragging] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
-  const [position, setPosition] = useState(initialPosition);
+  const [position] = useState(initialPosition);
 
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -68,38 +68,6 @@ export const Hobby = ({
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [x, y]);
-
-  // Calculate nearest valid position
-  const getNearestValidPosition = (
-    card: HTMLDivElement,
-    container: DOMRect
-  ): { x: number; y: number } => {
-    const cardRect = card.getBoundingClientRect();
-    const cardWidth = card.offsetWidth;
-    const cardHeight = card.offsetHeight;
-
-    const maxX = container.width - cardWidth;
-    const maxY = container.height - cardHeight;
-
-    let nearestX = Math.max(0, Math.min(cardRect.left - container.left, maxX));
-    let nearestY = Math.max(0, Math.min(cardRect.top - container.top, maxY));
-
-    return { x: nearestX, y: nearestY };
-  };
-
-  // Animate back to nearest valid position
-  const animateToNearestPosition = (targetX: number, targetY: number) => {
-    animate(x, targetX, {
-      type: "spring",
-      stiffness: 500,
-      damping: 30,
-    });
-    animate(y, targetY, {
-      type: "spring",
-      stiffness: 500,
-      damping: 30,
-    });
-  };
 
   return (
     <motion.div

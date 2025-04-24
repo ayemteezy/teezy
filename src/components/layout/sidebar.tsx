@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { links } from "@/consts";
-import { FileIcon, MailIcon, MenuIcon } from "lucide-react";
+import { MailIcon, MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
 import { RxGithubLogo } from "react-icons/rx";
