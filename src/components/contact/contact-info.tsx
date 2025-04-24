@@ -21,9 +21,9 @@ export const ContactInfo = () => {
       <BlurFade
         inView
         delay={0.5}
-        className="w-full flex flex-col items-start md:items-center justify-start md:justify-center px-4 lg:px-34"
+        className="w-full flex flex-col mx-auto items-start md:items-center justify-start md:justify-center px-4 lg:px-34"
       >
-        <div className="flex flex-col items-center justify-center">
+        <div className="w-full flex flex-col items-center justify-center">
           <Image src={memoji4} alt="Person with a smile" className="size-30" />
           <p className="text-muted-foreground lg:text-base text-sm  max-w-lg text-center">
             I&apos;m currently available for freelance work and exciting new
@@ -33,7 +33,7 @@ export const ContactInfo = () => {
           <Button
             asChild
             size="lg"
-            className="my-8 w-full md:w-auto flex items-center gap-4"
+            className="my-8 w-full md:w-60 flex items-center gap-4"
           >
             <a href={`mailto:${siteConfig.links.email}`}>
               <div className="flex items-center gap-2 justify-center">

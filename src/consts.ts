@@ -77,23 +77,18 @@ export const techStack = [
     details: [
       {
         name: "React.js",
-        progress: 90,
       },
       {
         name: "Next.js",
-        progress: 80,
       },
       {
         name: "TailwindCSS",
-        progress: 90,
       },
       {
         name: "Framer Motion",
-        progress: 65,
       },
       {
         name: "React Native",
-        progress: 75,
       },
     ],
     libTitle: "Frameworks & Libraries",
@@ -113,23 +108,18 @@ export const techStack = [
     details: [
       {
         name: "Node.js",
-        progress: 85,
       },
       {
         name: "Next.js API Routes",
-        progress: 80,
       },
       {
         name: "Drizzle ORM",
-        progress: 85,
       },
       {
         name: "NeonDB",
-        progress: 75,
       },
       {
         name: "Hono.js",
-        progress: 60,
       },
     ],
     libTitle: "Databases & ORMs",
@@ -154,23 +144,18 @@ export const techStack = [
     details: [
       {
         name: "Git & GitHub",
-        progress: 95,
       },
       {
         name: "Vercel",
-        progress: 90,
       },
       {
         name: "Figma",
-        progress: 85,
       },
       {
         name: "Docker",
-        progress: 60,
       },
       {
         name: "CI/CD (GitHub Actions)",
-        progress: 65,
       },
     ],
     libTitle: "Development, Deployment & APIs",
@@ -286,32 +271,35 @@ export const hobbies = [
 
 export const books = [
   {
-    image: "/images/eleceed.png",
-    title: "Eleceed",
-    author: "Son Je-Ho (손제호)",
-    type: "manhwa",
-    quote: "True strength is shown through kindness.",
+    image: "/images/pragmatic-programmer.png",
+    title: "The Pragmatic Programmer",
+    author: "David Thomas and Andrew Hunt",
+    type: "tech",
+    quote:
+      "Your knowledge and experience are your most valuable professional assets.",
   },
   {
-    image: "/images/paper-towns.png",
-    title: "Paper Towns",
-    author: "John Green",
+    image: "/images/the-alchemist.png",
+    title: "The Alchemist",
+    author: "Paulo Coelho",
     type: "Novel",
-    quote: "A person is simply a person.",
+    quote:
+      "And, when you want something, all the universe conspires in helping you to achieve it.",
   },
   {
-    image: "/images/solo-leveling.png",
-    title: "Solo Leveling",
-    author: "Chugong",
-    type: "manhwa",
-    quote: "I'll show you what it means to be the strongest hunter.",
+    image: "/images/clean-code.png",
+    title: "Clean Code",
+    author: "Robert C. Martin",
+    type: "tech",
+    quote: "Code is read more than it is written.",
   },
   {
-    image: "/images/blue-period.png",
-    title: "Blue Period",
-    author: "Tsubasa Yamaguchi",
-    type: "manga",
-    quote: "Art is the exploration of your inner world.",
+    image: "/images/atomic-habits.png",
+    title: "Atomic Habits",
+    author: "James Clear",
+    type: "self-help",
+    quote:
+      "You do not rise to the level of your goals. You fall to the level of your systems.",
   },
 ];
 

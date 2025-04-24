@@ -7,7 +7,7 @@ import { MusicAndEntertainment } from "./music-and-entertainment";
 export const PersonalLife = () => {
   return (
     <BlurFade inView delay={0.75} className="w-full px-4">
-      <div className="grid w-full grid-cols-1 lg:grid-cols-12 gap-8 auto-rows-[minmax(150px,auto)]">
+      <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 auto-rows-[minmax(150px,auto)]">
         <div className="col-span-1 lg:col-span-8 row-span-2 relative">
           <Books />
         </div>

@@ -18,12 +18,13 @@ export const Books = () => {
         <p className="max-w-160 z-10 text-sm md:text-base">
           I read{" "}
           <span className="font-bold text-primary">
-            50+ books, manga, and manhwa{" "}
+            inspiring books and novels{" "}
           </span>
-          per year. These stories have shaped my thinking and approach to both
-          life and coding.
+          each year. These stories have deeply influenced my mindset and
+          approach to both life and coding.
         </p>
-        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 my-4">
+
+        <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 my-4">
           {books.map((book) => (
             <div
               key={book.title}
@@ -37,7 +38,7 @@ export const Books = () => {
                   className="object-cover rounded-lg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-lg" />
-                <p className="absolute bottom-2 px-0.75 hidden group-hover:block text-xs z-10 italic">
+                <p className="absolute bottom-2 left-2 px-0.75 hidden group-hover:block text-xs z-10 italic">
                   &quot;{book.quote}&quot;
                 </p>
 

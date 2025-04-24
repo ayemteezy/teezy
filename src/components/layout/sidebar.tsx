@@ -34,12 +34,6 @@ export const Sidebar = () => {
   return (
     <div className="inline-flex items-center gap-2 lg:hidden">
       <div className="flex items-center gap-2 ">
-        <Button size="lg" asChild>
-          <a href={siteConfig.links.resume} target="_blank">
-            <FileIcon className="size-4" />
-            <span className="sr-only">Download Resume</span>
-          </a>
-        </Button>
         <ThemeToggle />
         <Sheet open={sheetOpen} onOpenChange={handleSheetClose}>
           <SheetTrigger asChild>
@@ -68,7 +62,12 @@ export const Sidebar = () => {
                 </ScrollLink>
               ))}
             </nav>
-            <div className="mt-auto mb-4 flex flex-col">
+            <div className="mt-auto mb-4 flex flex-col gap-6">
+              <Button size="lg">
+                <a href={siteConfig.links.resume} target="_blank">
+                  Download CV
+                </a>
+              </Button>
               <div className="flex items-center justify-around">
                 <Link
                   href={siteConfig.links.github}

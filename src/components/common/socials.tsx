@@ -82,7 +82,6 @@ export const Socials = () => {
           </ul>
           <div className="h-[calc(50%-2.5rem)] w-px bg-gradient-to-t from-transparent to-muted-foreground" />
         </BlurFade>
-        cd
         <BlurFade
           className={`fixed right-10 bottom-0 z-10 hidden lg:flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${positionClass}`}
           delay={1.75}
