@@ -25,7 +25,7 @@ export const NavItem = ({ index, label, href, icon: Icon }: NavItemProps) => {
 			) : (
 				<span className="text-[0.625rem]">0{index + 1}</span>
 			)}
-			<p className="text-sm capitalize">{label}</p>
+			<p className="text-[0.8125rem] capitalize">{label}</p>
 		</Link>
 	);
 };

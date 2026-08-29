@@ -80,7 +80,7 @@ export const NAV_SECTIONS = [
 		],
 	},
 	{
-		sectio: "personal",
+		section: "personal",
 		items: [
 			{ label: "blog", href: ROUTES.PERSONAL.BLOG, icon: SquareTextIcon },
 			{ label: "gear", href: ROUTES.PERSONAL.GEAR, icon: LaptopMinimalIcon },
