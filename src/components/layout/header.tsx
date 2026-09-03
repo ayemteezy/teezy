@@ -8,7 +8,7 @@ export const Header = () => {
 			<Link to="/" className="flex items-center gap-2">
 				<Logo />
 				<div className="flex-col">
-					<h1 className="font-sans font-semibold">Teezy</h1>
+					<h1 className="font-pixel">Teezy</h1>
 					<Availability />
 				</div>
 			</Link>

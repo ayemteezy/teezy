@@ -5,30 +5,31 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { CTA } from "./cta";
+import { Glance } from "./glance";
 
 export const Hero = () => {
 	const [isExtended, setIsExtended] = useState(false);
 
 	return (
 		<section>
-			<div className="flex gap-4 mb-4">
+			<div className="mb-4 flex gap-4">
 				<Image
 					src="/images/image.jpg"
 					alt="my graduation photo"
 					width={65}
 					height={65}
-					className="shadow rounded-xl"
+					className="aspect-square shrink-0 self-start rounded-xl shadow"
 				/>
 				<div>
 					<h1 className="font-bold font-sans">Laurence Lester Cariño</h1>
-					<span className="text-sm text-muted-foreground">
-						Full Stack Developer / Aspiring Software Engineer
+					<span className="text-muted-foreground text-sm">
+						Full Stack Developer
 					</span>
 				</div>
 			</div>
 			<div
 				className={cn(
-					"font-sans text-muted-foreground flex flex-col transition-all duration-500 ease-in-out",
+					"flex flex-col font-sans text-muted-foreground transition-all duration-500 ease-in-out",
 					isExtended ? "gap-4" : "gap-2",
 				)}
 			>
@@ -43,7 +44,7 @@ export const Hero = () => {
 						isExtended ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
 					)}
 				>
-					<div className="overflow-hidden flex flex-col gap-4">
+					<div className="flex flex-col gap-4 overflow-hidden">
 						<p>
 							I specialize in high-performance, full-stack web applications
 							using React, Next.js, TypeScript, and Tailwind CSS, with a focus
@@ -59,6 +60,7 @@ export const Hero = () => {
 							for a growing team, I aim to make the work feel deliberate from
 							the first line of code to the last pixel.
 						</p>
+						<Glance />
 					</div>
 				</div>
 				<div className="flex flex-col gap-2">

@@ -5,26 +5,27 @@ import { SOCIALS } from "@/constants/socials";
 
 export const CTA = () => {
 	return (
-		<div className="flex items-center justify-between">
-			<a
-				href="/documents/CV.pdf"
-				download="Laurence_Lester_Carino_CV.pdf"
-				className="inline-block"
+		<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+			<Button
+				className="hidden w-fit rounded-sm font-mono uppercase md:flex"
+				size="lg"
 			>
-				<Button className="rounded-sm font-mono uppercase" size="lg">
+				<a href="/documents/CV.pdf" download="Laurence_Lester_Carino_CV.pdf">
 					download cv
-					<ArrowDownRightIcon className="size-3" aria-hidden="true" />
-					<span className="sr-only">(PDF document, downloads file)</span>
-				</Button>
-			</a>
+				</a>
+				<ArrowDownRightIcon className="size-3" aria-hidden="true" />
+				<span className="sr-only">(PDF document, downloads file)</span>
+			</Button>
 
-			<div className="flex items-center gap-3">
-				<span className="uppercase font-mono text-[10px]">find me on</span>
+			<div className="flex flex-wrap items-center">
+				<span className="mr-2 whitespace-nowrap font-mono text-[10px] text-muted-foreground uppercase">
+					find me on
+				</span>
 				<div>
 					{SOCIALS.map((social) => (
 						<Button
 							key={social.href}
-							className="font-mono text-xs"
+							className="px-2 font-mono text-xs"
 							variant="ghost"
 							size="xs"
 							render={
