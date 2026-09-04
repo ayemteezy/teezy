@@ -19,7 +19,7 @@ body{
   margin: 0;
 }
 
-body{display: flex; font-family: var(--font-mono);}
+body{display: flex; font-family: var(--font-mono); background: var(--background);}
 main{flex:1}
 
 @theme inline {
@@ -148,4 +148,12 @@ main{flex:1}
   }
 }
 
-@utility container {@apply max-w-156.25 mx-auto}
+@utility container {
+  @apply w-full px-4 mx-auto;
+
+  @media (min-width: 64rem) {
+    @apply max-w-160;
+  }
+}
+
+
