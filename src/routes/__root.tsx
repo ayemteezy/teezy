@@ -75,12 +75,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 function RootDocument() {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
 				<HeadContent />
 			</head>
 			<body>
-				<ThemeProvider defaultTheme="dark" storageKey="theme">
+				<ThemeProvider defaultTheme="light" storageKey="theme">
 					<Navbar />
 					<Sidebar />
 					<MobileSidebar />

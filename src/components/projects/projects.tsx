@@ -1,15 +1,30 @@
+import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { SectionHeader } from "@/components/ui/section-header";
+import { GITHUB } from "@/constants/configs/github.config";
+import { getPinnedRepos } from "@/data/github";
+import { ProjectList } from "./project-list";
 
 export const Projects = () => {
-	const _navigate = useNavigate();
+	const navigate = useNavigate();
+	const { data, isLoading, error } = useQuery({
+		queryKey: ["pinned-repos", GITHUB.username],
+		queryFn: () => getPinnedRepos(),
+		staleTime: GITHUB.pinnedRepos.staleTimeMs,
+	});
+
 	return (
-		<div>
+		<div className="space-y-6">
 			<SectionHeader
-				index={1}
-				section="projects"
+				section={`02 \u2014 projects`}
 				buttonLabel="View All"
-				onClick={() => _navigate({ to: "/projects" })}
+				onClick={() => navigate({ to: "/projects" })}
+			/>
+
+			<ProjectList
+				data={data ? data : []}
+				error={error}
+				isLoading={isLoading}
 			/>
 		</div>
 	);

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowDownRightIcon, MenuIcon } from "lucide-react";
 import { Logo } from "@/components/common/logo";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/constants/configs/site.config";
 import { useSidebarStore } from "@/store/sidebar-store";
 
 export const Navbar = () => {
@@ -19,10 +20,7 @@ export const Navbar = () => {
 						className="flex w-fit rounded-sm font-mono uppercase"
 						size="lg"
 					>
-						<a
-							href="/documents/CV.pdf"
-							download="Laurence_Lester_Carino_CV.pdf"
-						>
+						<a href={SITE.profile.cv.path} download={SITE.profile.cv.filename}>
 							download cv
 						</a>
 						<ArrowDownRightIcon className="size-3" aria-hidden="true" />

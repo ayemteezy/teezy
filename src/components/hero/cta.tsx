@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowDownRightIcon, ArrowUpRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SITE } from "@/constants/configs/site.config";
 import { SOCIALS } from "@/constants/socials";
 
 export const CTA = () => {
@@ -10,7 +11,7 @@ export const CTA = () => {
 				className="hidden w-fit rounded-sm font-mono uppercase md:flex"
 				size="lg"
 			>
-				<a href="/documents/CV.pdf" download="Laurence_Lester_Carino_CV.pdf">
+				<a href={SITE.profile.cv.path} download={SITE.profile.cv.filename}>
 					download cv
 				</a>
 				<ArrowDownRightIcon className="size-3" aria-hidden="true" />
@@ -24,10 +25,11 @@ export const CTA = () => {
 				<div>
 					{SOCIALS.map((social) => (
 						<Button
-							key={social.href}
+							key={social.label}
 							className="px-2 font-mono text-xs"
 							variant="ghost"
 							size="xs"
+							nativeButton={false}
 							render={
 								<Link
 									to={social.href}
