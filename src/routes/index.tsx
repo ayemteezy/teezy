@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Experience } from "@/components/experience/experience";
 import { Hero } from "@/components/hero/hero";
 import { PageHeader } from "@/components/hero/page-header";
 import { Projects } from "@/components/projects/projects";
+import { Stack } from "@/components/stack/stack";
 
 export const Route = createFileRoute("/")({
 	component: RouteComponent,
@@ -15,8 +17,16 @@ function RouteComponent() {
 					<PageHeader />
 					<Hero />
 				</div>
+				{/* stack */}
+				<Stack />
+
 				{/* projects */}
 				<Projects />
+
+				{/* experience */}
+				<Experience />
+				{/* certifications */}
+				{/* affliations */}
 			</div>
 		</main>
 	);

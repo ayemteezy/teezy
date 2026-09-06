@@ -82,8 +82,8 @@ function RootDocument() {
 			<body>
 				<ThemeProvider defaultTheme="light" storageKey="theme">
 					<Navbar />
-					<Sidebar />
 					<MobileSidebar />
+					<Sidebar />
 					<Outlet />
 				</ThemeProvider>
 				<TanStackDevtools

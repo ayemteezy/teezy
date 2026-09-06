@@ -25,7 +25,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 	};
 
 	return (
-		<Card className="w-full p-0">
+		<Card className="w-full cursor-pointer p-0 transition-all duration-200 ease-in-out hover:scale-101 hover:shadow-lg">
 			<div className="flex flex-row gap-4 p-4">
 				<Image
 					src={imageSrc}
@@ -43,7 +43,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 							{data.description}
 						</CardDescription>
 					</CardHeader>
-					<CardContent className="flex flex-wrap items-center gap-2 p-0">
+					<CardContent className="flex flex-wrap items-center gap-1 p-0">
 						{data.languages?.nodes?.map((language) => (
 							<Badge
 								variant="outline"
@@ -63,7 +63,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 							</Badge>
 						))}
 					</CardContent>
-					<div className="mt-2 flex gap-2">
+					<div className="mt-2 flex gap-1">
 						<Button
 							onClick={() => _handleExternalLink(data.homepageUrl)}
 							disabled={!data.homepageUrl}

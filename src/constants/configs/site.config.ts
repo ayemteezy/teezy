@@ -52,9 +52,9 @@ export const SITE = {
   },
 
   socials: [
-    { label: "github", href: "https://github.com/your-username" },
-    { label: "linkedin", href: "https://linkedin.com/in/your-username" },
-    { label: "x", href: "https://x.com/your-username" },
+    { label: "github", href: "https://github.com/ayemteezy/" },
+    { label: "linkedin", href: "https://linkedin.com/in/laurence-lester-cariño/" },
+    { label: "x", href: "https://x.com/ayemteezy_/" },
   ],
 
 } as const

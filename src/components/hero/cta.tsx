@@ -1,8 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowDownRightIcon, ArrowUpRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/constants/configs/site.config";
-import { SOCIALS } from "@/constants/socials";
 
 export const CTA = () => {
 	return (
@@ -23,24 +21,20 @@ export const CTA = () => {
 					find me on
 				</span>
 				<div>
-					{SOCIALS.map((social) => (
+					{SITE.socials.map((social) => (
 						<Button
 							key={social.label}
 							className="px-2 font-mono text-xs"
-							variant="ghost"
+							variant="link"
 							size="xs"
 							nativeButton={false}
 							render={
-								<Link
-									to={social.href}
-									target="_blank"
-									rel="noopener noreferrer"
-								/>
+								<a href={social.href} target="_blank" rel="noopener noreferrer">
+									{social.label}
+									<ArrowUpRightIcon className="size-3" />
+								</a>
 							}
-						>
-							{social.label}
-							<ArrowUpRightIcon className="size-3" />
-						</Button>
+						/>
 					))}
 				</div>
 			</div>
