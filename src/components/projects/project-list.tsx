@@ -10,16 +10,20 @@ interface ProjectListProps {
 export const ProjectList = ({ data, isLoading, error }: ProjectListProps) => {
 	if (error) {
 		return (
-			<p className="font-mono text-muted-foreground text-sm">{error.message}</p>
+			<div className="flex justify-center">
+				<p className="font-mono text-muted-foreground text-xs uppercase">
+					{error.message}
+				</p>
+			</div>
 		);
 	}
 
 	if (isLoading) {
+		const _SKELETON_KEYS = ["skeleton-1", "skeleton-2", "skeleton-3"];
 		return (
 			<div className="flex flex-col gap-4">
-				{Array.from({ length: 3 }).map((_, i) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: static skeleton count, order never changes
-					<CardSkeleton key={i} />
+				{_SKELETON_KEYS.map((key) => (
+					<CardSkeleton key={key} />
 				))}
 			</div>
 		);
@@ -27,9 +31,11 @@ export const ProjectList = ({ data, isLoading, error }: ProjectListProps) => {
 
 	if (data.length === 0) {
 		return (
-			<p className="font-mono text-muted-foreground text-sm">
-				No projects found.
-			</p>
+			<div className="flex justify-center">
+				<p className="font-mono text-muted-foreground text-xs uppercase">
+					No Projects Found.
+				</p>
+			</div>
 		);
 	}
 

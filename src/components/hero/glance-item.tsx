@@ -11,7 +11,7 @@ export const GlanceItem = ({ number, label, href }: GlanceItemProps) => {
 	return (
 		<Link
 			to={href}
-			className="group block p-4 transition-colors duration-300 ease-in-out hover:bg-accent"
+			className="group block p-4 transition-colors duration-300 ease-in-out"
 		>
 			<div className="flex items-start gap-1 overflow-hidden font-medium font-pixel text-2xl">
 				<span className="font-medium text-foreground text-xl">{number}</span>

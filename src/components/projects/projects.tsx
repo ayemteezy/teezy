@@ -17,7 +17,7 @@ export const Projects = () => {
 		<div className="space-y-6">
 			<SectionHeader
 				section={`02 \u2014 projects`}
-				buttonLabel="View All"
+				buttonLabel="all projects"
 				onClick={() => navigate({ to: "/projects" })}
 			/>
 
