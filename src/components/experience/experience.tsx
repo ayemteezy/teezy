@@ -1,16 +1,18 @@
 import { useNavigate } from "@tanstack/react-router";
 import { SectionHeader } from "@/components/ui/section-header";
+import { ExperienceList } from "./experience-list";
 
 export const Experience = () => {
 	const _navigate = useNavigate();
 
 	return (
-		<div>
+		<div className="space-y-6">
 			<SectionHeader
 				section={`03 \u2014 experience`}
 				buttonLabel="full history"
-				onClick={() => _navigate({ to: "/stack" })}
+				onClick={() => _navigate({ to: "/experience" })}
 			/>
+			<ExperienceList />
 		</div>
 	);
 };
