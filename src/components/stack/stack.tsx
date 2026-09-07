@@ -6,7 +6,7 @@ export const Stack = () => {
 	const _navigate = useNavigate();
 
 	return (
-		<div className="space-y-3">
+		<div className="space-y-6">
 			<SectionHeader
 				section={`01 \u2014 stack`}
 				buttonLabel="view all"
