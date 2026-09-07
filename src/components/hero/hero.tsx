@@ -14,7 +14,7 @@ export const Hero = () => {
 		<section>
 			<div className="mb-4 flex gap-4">
 				<Image
-					src="/images/image.jpg"
+					src="/images/photo.jpg"
 					alt="my graduation photo"
 					width={65}
 					height={65}
