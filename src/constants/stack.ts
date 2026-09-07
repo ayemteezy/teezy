@@ -1,12 +1,4 @@
-export type StackItem = {
-  name: string;
-  pinned?: boolean;
-};
-
-export type StackCategory = {
-  label: string;
-  stack: StackItem[];
-};
+import type { StackCategory } from "@/types/stack";
 
 export const STACK: StackCategory[] = [
   {

@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import type { StackItem } from "@/constants/stack";
+import type { StackItem } from "@/types/stack";
 
 interface StackItemProps {
 	data: StackItem;
