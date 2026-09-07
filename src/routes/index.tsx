@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
 });
 
 function RouteComponent() {
-	const { closeSidebar, isOpen } = useSidebarStore();
+	const { isOpen } = useSidebarStore();
 
 	return (
 		<main
