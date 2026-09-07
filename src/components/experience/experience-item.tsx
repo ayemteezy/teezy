@@ -6,23 +6,40 @@ type ExperienceItemProps = {
 	roles: Role[];
 };
 
+const _formatRoleDateRange = (date: Role["date"]) => {
+	if (!date.end) return `${formatDate(date.start)} – Present`;
+
+	const sameYear = date.start.slice(0, 4) === date.end.slice(0, 4);
+	const start = sameYear
+		? formatDate(date.start).replace(date.start.slice(0, 4), "").trim()
+		: formatDate(date.start);
+
+	return `${start} – ${formatDate(date.end)}`;
+};
+
 export const ExperienceItem = ({ company, roles }: ExperienceItemProps) => {
 	return (
-		<div>
-			{roles.map((role) => (
-				<div key={role.role} className="grid grid-cols-3 items-center py-4">
-					<div>
+		<>
+			{roles.map((role) => {
+				return (
+					<div
+						key={role.role}
+						className="flex cursor-pointer items-center justify-between py-2.5 hover:bg-accent"
+					>
+						<div className="flex flex-col">
+							<p className="font-sans font-semibold text-xs sm:text-sm">
+								{role.role}
+							</p>
+							<span className="text-[0.625rem] text-muted-foreground sm:text-xs">
+								{company}
+							</span>
+						</div>
 						<p className="text-[0.625rem] text-muted-foreground">
-							{formatDate(role.date.start)} -{" "}
-							{role.date.end ? formatDate(role.date.end) : "Present"}
+							{_formatRoleDateRange(role.date)}
 						</p>
 					</div>
-					<p className="font-sans font-semibold text-sm">{role.role}</p>
-					<p className="text-end text-[0.625rem] text-muted-foreground">
-						{company}
-					</p>
-				</div>
-			))}
-		</div>
+				);
+			})}
+		</>
 	);
 };

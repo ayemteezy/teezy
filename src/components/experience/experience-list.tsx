@@ -3,7 +3,7 @@ import { ExperienceItem } from "./experience-item";
 
 export const ExperienceList = () => {
 	return (
-		<div className="border-y">
+		<div className="divide-y border-y">
 			{EXPERIENCE.map((item) => (
 				<ExperienceItem
 					key={item.company}
