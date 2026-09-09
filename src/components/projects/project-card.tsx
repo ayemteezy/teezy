@@ -36,10 +36,12 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 					height={40}
 					className="aspect-square size-10 shrink-0 rounded-md shadow-sm"
 				/>
-				<div className="flex flex-1 flex-col gap-2 p-0">
+				<div className="flex min-w-0 flex-1 flex-col gap-2 p-0">
 					<CardHeader className="p-0">
-						<CardTitle className="font-pixel">{data.name}</CardTitle>
-						<CardDescription className="font-sans">
+						<CardTitle className="h-4 truncate font-pixel text-[16px] leading-none tracking-normal [-webkit-font-smoothing:none] [font-smooth:never]">
+							{data.name}
+						</CardTitle>
+						<CardDescription className="line-clamp-2 font-sans">
 							{data.description}
 						</CardDescription>
 					</CardHeader>
@@ -47,7 +49,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 						{data.languages?.nodes?.map((language) => (
 							<Badge
 								variant="outline"
-								className="text-muted-foreground"
+								className="max-w-full truncate whitespace-normal text-muted-foreground"
 								key={language.name}
 							>
 								{language.name}
@@ -56,7 +58,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 						{data.repositoryTopics.nodes.map((topic) => (
 							<Badge
 								variant="outline"
-								className="text-muted-foreground capitalize"
+								className="max-w-full truncate whitespace-normal text-muted-foreground capitalize"
 								key={topic.topic.name}
 							>
 								{topic.topic.name}

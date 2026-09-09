@@ -13,7 +13,7 @@ export const SectionHeader = ({
 	onClick,
 }: SectionHeaderProps) => {
 	return (
-		<div className="itecems-center flex justify-between text-muted-foreground">
+		<div className="itecems-center flex items-center justify-between text-muted-foreground">
 			<h2 className="font-pixel text-xs uppercase">{section}</h2>
 			<Button
 				className="font-mono text-[0.625rem] uppercase tracking-wider"

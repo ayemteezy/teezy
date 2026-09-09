@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Certifications } from "@/components/certifications/certifications";
 import { Experience } from "@/components/experience/experience";
 import { Hero } from "@/components/hero/hero";
 import { PageHeader } from "@/components/hero/page-header";
@@ -32,8 +33,12 @@ function RouteComponent() {
 
 				{/* experience */}
 				<Experience />
+
 				{/* certifications */}
+				<Certifications />
+
 				{/* affliations */}
+				<div>Hello</div>
 			</div>
 		</main>
 	);

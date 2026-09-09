@@ -6,6 +6,11 @@ import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 const config = defineConfig({
+	server: {
+		host: true,
+		allowedHosts: ["crablike-numeric-backtrack.ngrok-free.dev"],
+	},
+
 	resolve: { tsconfigPaths: true },
 	plugins: [
 		devtools(),

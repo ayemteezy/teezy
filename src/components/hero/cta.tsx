@@ -6,7 +6,7 @@ export const CTA = () => {
 	return (
 		<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 			<Button
-				className="hidden w-fit rounded-sm font-mono uppercase md:flex"
+				className="hidden w-fit rounded-sm font-mono uppercase lg:flex"
 				size="lg"
 			>
 				<a href={SITE.profile.cv.path} download={SITE.profile.cv.filename}>

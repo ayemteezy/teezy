@@ -1,8 +1,8 @@
 import {
-  BookOpenIcon,
-  LaptopMinimalIcon,
-  type LucideIcon,
-  SquareTextIcon,
+	BookOpenIcon,
+	LaptopMinimalIcon,
+	type LucideIcon,
+	SquareTextIcon,
 } from "lucide-react";
 
 /**
@@ -10,35 +10,34 @@ import {
  * Not exported - access route paths via {@link NAV_SECTIONS} instead.
  */
 const ROUTES = {
-  EXPLORE: {
-    PROJECTS: "/projects",
-    EXPERIENCE: "/experience",
-    STACK: "/stack",
-    CERTIFICATIONS: "/certifications",
-    AFFILIATIONS: "/affiliations",
-  },
-  PERSONAL: {
-    BLOG: "/blog",
-    GEAR: "/gear",
-    RESOURCES: "/resources",
-  },
+	EXPLORE: {
+		PROJECTS: "/projects",
+		EXPERIENCE: "/experience",
+		STACK: "/stack",
+		CERTIFICATIONS: "/certifications",
+	},
+	PERSONAL: {
+		BLOG: "/blog",
+		GEAR: "/gear",
+		RESOURCES: "/resources",
+	},
 } as const;
 
 /**
  * A single sidebar navigation link.
  */
 export type NavItemType = {
-  label: string;
-  href: string;
-  icon?: LucideIcon;
+	label: string;
+	href: string;
+	icon?: LucideIcon;
 };
 
 /**
  * A group of nav items under a shared section heading.
  */
 export type NavSectionType = {
-  section: string;
-  items: NavItemType[];
+	section: string;
+	items: NavItemType[];
 };
 
 /**
@@ -52,26 +51,25 @@ export type NavSectionType = {
  * @property items[].icon - Icon name
  */
 export const NAV_SECTIONS = [
-  {
-    section: "explore",
-    items: [
-      { label: "stack", href: ROUTES.EXPLORE.STACK },
-      { label: "projects", href: ROUTES.EXPLORE.PROJECTS },
-      { label: "experience", href: ROUTES.EXPLORE.EXPERIENCE },
-      { label: "certifications", href: ROUTES.EXPLORE.CERTIFICATIONS },
-      { label: "affiliations", href: ROUTES.EXPLORE.AFFILIATIONS },
-    ],
-  },
-  {
-    section: "personal",
-    items: [
-      { label: "blog", href: ROUTES.PERSONAL.BLOG, icon: SquareTextIcon },
-      { label: "gear", href: ROUTES.PERSONAL.GEAR, icon: LaptopMinimalIcon },
-      {
-        label: "resources",
-        href: ROUTES.PERSONAL.RESOURCES,
-        icon: BookOpenIcon,
-      },
-    ],
-  },
+	{
+		section: "explore",
+		items: [
+			{ label: "stack", href: ROUTES.EXPLORE.STACK },
+			{ label: "projects", href: ROUTES.EXPLORE.PROJECTS },
+			{ label: "experience", href: ROUTES.EXPLORE.EXPERIENCE },
+			{ label: "certifications", href: ROUTES.EXPLORE.CERTIFICATIONS },
+		],
+	},
+	{
+		section: "personal",
+		items: [
+			{ label: "blog", href: ROUTES.PERSONAL.BLOG, icon: SquareTextIcon },
+			{ label: "gear", href: ROUTES.PERSONAL.GEAR, icon: LaptopMinimalIcon },
+			{
+				label: "resources",
+				href: ROUTES.PERSONAL.RESOURCES,
+				icon: BookOpenIcon,
+			},
+		],
+	},
 ];
