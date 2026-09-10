@@ -3,8 +3,10 @@ import { Certifications } from "@/components/certifications/certifications";
 import { Experience } from "@/components/experience/experience";
 import { Hero } from "@/components/hero/hero";
 import { PageHeader } from "@/components/hero/page-header";
+import { Footer } from "@/components/layout/footer";
 import { Projects } from "@/components/projects/projects";
 import { Stack } from "@/components/stack/stack";
+import { Telemetry } from "@/components/telemetry/telemetry";
 import { Testimonials } from "@/components/testimonials/testimonials";
 import { useSidebarStore } from "@/store/sidebar-store";
 
@@ -19,9 +21,9 @@ function HomePage() {
 		<main
 			aria-hidden={isOpen}
 			inert={isOpen}
-			className="flex h-full px-2 sm:px-12 lg:px-0 lg:pl-56"
+			className="flex min-h-full flex-col px-2 pb-20 sm:px-12 lg:px-0"
 		>
-			<div className="container flex flex-col space-y-21 py-12">
+			<div className="container flex flex-col space-y-21 pt-12 pb-12">
 				<div className="flex flex-col gap-6 md:gap-8">
 					<PageHeader />
 					<Hero />
@@ -41,7 +43,12 @@ function HomePage() {
 				{/* testimonials */}
 				<Testimonials />
 
-				<div>Hello</div>
+				{/* Telemetry */}
+				<Telemetry />
+
+				{/* Footer */}
+
+				<Footer />
 			</div>
 		</main>
 	);

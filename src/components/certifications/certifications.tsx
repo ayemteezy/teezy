@@ -6,13 +6,13 @@ export const Certifications = () => {
 	const _navigate = useNavigate();
 
 	return (
-		<div className="space-y-6">
+		<section className="space-y-6">
 			<SectionHeader
 				section={`04 \u2014 certifications`}
 				buttonLabel="all certifications"
 				onClick={() => _navigate({ to: "/certifications" })}
 			/>
 			<CertificationList />
-		</div>
+		</section>
 	);
 };

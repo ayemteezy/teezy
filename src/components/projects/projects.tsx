@@ -14,7 +14,7 @@ export const Projects = () => {
 	});
 
 	return (
-		<div className="space-y-6">
+		<section className="space-y-6">
 			<SectionHeader
 				section={`02 \u2014 projects`}
 				buttonLabel="all projects"
@@ -26,6 +26,6 @@ export const Projects = () => {
 				error={error}
 				isLoading={isLoading}
 			/>
-		</div>
+		</section>
 	);
 };

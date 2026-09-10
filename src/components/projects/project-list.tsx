@@ -19,12 +19,9 @@ export const ProjectList = ({ data, isLoading, error }: ProjectListProps) => {
 	}
 
 	if (isLoading) {
-		const _SKELETON_KEYS = ["skeleton-1", "skeleton-2", "skeleton-3"];
 		return (
 			<div className="flex flex-col gap-4">
-				{_SKELETON_KEYS.map((key) => (
-					<CardSkeleton key={key} />
-				))}
+				<CardSkeleton />
 			</div>
 		);
 	}

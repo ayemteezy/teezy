@@ -6,13 +6,13 @@ export const Experience = () => {
 	const _navigate = useNavigate();
 
 	return (
-		<div className="space-y-6">
+		<section className="space-y-6">
 			<SectionHeader
 				section={`03 \u2014 experience`}
 				buttonLabel="full history"
 				onClick={() => _navigate({ to: "/experience" })}
 			/>
 			<ExperienceList />
-		</div>
+		</section>
 	);
 };
