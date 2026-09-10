@@ -25,7 +25,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 	};
 
 	return (
-		<Card className="w-full cursor-pointer p-0 transition-all duration-200 ease-in-out hover:scale-101 hover:shadow-lg">
+		<Card className="w-full cursor-pointer p-0 transition-all duration-200 ease-in-out hover:scale-101 hover:shadow-lg/5">
 			<div className="flex flex-row gap-4 p-4">
 				<Image
 					src={imageSrc}
@@ -70,7 +70,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 							onClick={() => _handleExternalLink(data.homepageUrl)}
 							disabled={!data.homepageUrl}
 							className="uppercase"
-							size="sm"
+							size="xs"
 						>
 							Live Demo
 							<ArrowUpRightIcon className="ml-1 size-3" />
@@ -79,10 +79,10 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 							onClick={() => _handleExternalLink(data.url)}
 							disabled={!data.url}
 							variant="outline"
-							size="sm"
+							size="xs"
 							className="text-muted-foreground uppercase"
 						>
-							Source Code
+							Source
 							<CodeXmlIcon className="ml-1 size-3" />
 						</Button>
 					</div>

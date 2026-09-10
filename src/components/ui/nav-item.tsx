@@ -26,7 +26,7 @@ export const NavItem = ({ index, label, href, icon: Icon }: NavItemProps) => {
 			{Icon ? (
 				<Icon className="size-3.5" />
 			) : (
-				<span className="text-xs">0{index + 1}</span>
+				<span className="text-[0.625rem]">0{index + 1}</span>
 			)}
 			<p className="capitalize lg:text-[13px]">{label}</p>
 		</Link>

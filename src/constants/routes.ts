@@ -15,6 +15,7 @@ const ROUTES = {
 		EXPERIENCE: "/experience",
 		STACK: "/stack",
 		CERTIFICATIONS: "/certifications",
+		TESTIMONIALS: "/testimonials",
 	},
 	PERSONAL: {
 		BLOG: "/blog",
@@ -58,6 +59,7 @@ export const NAV_SECTIONS = [
 			{ label: "projects", href: ROUTES.EXPLORE.PROJECTS },
 			{ label: "experience", href: ROUTES.EXPLORE.EXPERIENCE },
 			{ label: "certifications", href: ROUTES.EXPLORE.CERTIFICATIONS },
+			{ label: "testimonials", href: ROUTES.EXPLORE.TESTIMONIALS },
 		],
 	},
 	{
