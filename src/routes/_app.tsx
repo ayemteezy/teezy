@@ -13,7 +13,9 @@ function AppLayout() {
 			<Navbar />
 			<Sidebar />
 			<MobileSidebar />
-			<Outlet />
+			<div className="w-full">
+				<Outlet />
+			</div>
 		</>
 	);
 }

@@ -20,7 +20,7 @@ export const Telemetry = () => {
 	return (
 		<div className="space-y-6">
 			<SectionHeader
-				section={`08 — telemetry`}
+				section={`06 — telemetry`}
 				buttonLabel={`@${GITHUB.username}`}
 				icon={MoveUpRightIcon}
 				onClick={() =>

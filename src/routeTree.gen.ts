@@ -11,6 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
+import { Route as AppBlogIndexRouteImport } from './routes/_app/blog/index'
+import { Route as AppCertificationsIndexRouteImport } from './routes/_app/certifications/index'
+import { Route as AppExperienceIndexRouteImport } from './routes/_app/experience/index'
+import { Route as AppGearIndexRouteImport } from './routes/_app/gear/index'
+import { Route as AppProjectsIndexRouteImport } from './routes/_app/projects/index'
+import { Route as AppResourcesIndexRouteImport } from './routes/_app/resources/index'
+import { Route as AppStackIndexRouteImport } from './routes/_app/stack/index'
+import { Route as AppTestimonialsIndexRouteImport } from './routes/_app/testimonials/index'
 
 const AppRoute = AppRouteImport.update({
   id: '/_app',
@@ -21,24 +29,117 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppBlogIndexRoute = AppBlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCertificationsIndexRoute = AppCertificationsIndexRouteImport.update({
+  id: '/certifications/',
+  path: '/certifications/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppExperienceIndexRoute = AppExperienceIndexRouteImport.update({
+  id: '/experience/',
+  path: '/experience/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppGearIndexRoute = AppGearIndexRouteImport.update({
+  id: '/gear/',
+  path: '/gear/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppProjectsIndexRoute = AppProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppResourcesIndexRoute = AppResourcesIndexRouteImport.update({
+  id: '/resources/',
+  path: '/resources/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppStackIndexRoute = AppStackIndexRouteImport.update({
+  id: '/stack/',
+  path: '/stack/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTestimonialsIndexRoute = AppTestimonialsIndexRouteImport.update({
+  id: '/testimonials/',
+  path: '/testimonials/',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
+  '/blog/': typeof AppBlogIndexRoute
+  '/certifications/': typeof AppCertificationsIndexRoute
+  '/experience/': typeof AppExperienceIndexRoute
+  '/gear/': typeof AppGearIndexRoute
+  '/projects/': typeof AppProjectsIndexRoute
+  '/resources/': typeof AppResourcesIndexRoute
+  '/stack/': typeof AppStackIndexRoute
+  '/testimonials/': typeof AppTestimonialsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
+  '/blog': typeof AppBlogIndexRoute
+  '/certifications': typeof AppCertificationsIndexRoute
+  '/experience': typeof AppExperienceIndexRoute
+  '/gear': typeof AppGearIndexRoute
+  '/projects': typeof AppProjectsIndexRoute
+  '/resources': typeof AppResourcesIndexRoute
+  '/stack': typeof AppStackIndexRoute
+  '/testimonials': typeof AppTestimonialsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
   '/_app/': typeof AppIndexRoute
+  '/_app/blog/': typeof AppBlogIndexRoute
+  '/_app/certifications/': typeof AppCertificationsIndexRoute
+  '/_app/experience/': typeof AppExperienceIndexRoute
+  '/_app/gear/': typeof AppGearIndexRoute
+  '/_app/projects/': typeof AppProjectsIndexRoute
+  '/_app/resources/': typeof AppResourcesIndexRoute
+  '/_app/stack/': typeof AppStackIndexRoute
+  '/_app/testimonials/': typeof AppTestimonialsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blog/'
+    | '/certifications/'
+    | '/experience/'
+    | '/gear/'
+    | '/projects/'
+    | '/resources/'
+    | '/stack/'
+    | '/testimonials/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/_app' | '/_app/'
+  to:
+    | '/'
+    | '/blog'
+    | '/certifications'
+    | '/experience'
+    | '/gear'
+    | '/projects'
+    | '/resources'
+    | '/stack'
+    | '/testimonials'
+  id:
+    | '__root__'
+    | '/_app'
+    | '/_app/'
+    | '/_app/blog/'
+    | '/_app/certifications/'
+    | '/_app/experience/'
+    | '/_app/gear/'
+    | '/_app/projects/'
+    | '/_app/resources/'
+    | '/_app/stack/'
+    | '/_app/testimonials/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -61,15 +162,87 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/blog/': {
+      id: '/_app/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof AppBlogIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/certifications/': {
+      id: '/_app/certifications/'
+      path: '/certifications'
+      fullPath: '/certifications/'
+      preLoaderRoute: typeof AppCertificationsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/experience/': {
+      id: '/_app/experience/'
+      path: '/experience'
+      fullPath: '/experience/'
+      preLoaderRoute: typeof AppExperienceIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/gear/': {
+      id: '/_app/gear/'
+      path: '/gear'
+      fullPath: '/gear/'
+      preLoaderRoute: typeof AppGearIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/projects/': {
+      id: '/_app/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof AppProjectsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/resources/': {
+      id: '/_app/resources/'
+      path: '/resources'
+      fullPath: '/resources/'
+      preLoaderRoute: typeof AppResourcesIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/stack/': {
+      id: '/_app/stack/'
+      path: '/stack'
+      fullPath: '/stack/'
+      preLoaderRoute: typeof AppStackIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/testimonials/': {
+      id: '/_app/testimonials/'
+      path: '/testimonials'
+      fullPath: '/testimonials/'
+      preLoaderRoute: typeof AppTestimonialsIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
 interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
+  AppBlogIndexRoute: typeof AppBlogIndexRoute
+  AppCertificationsIndexRoute: typeof AppCertificationsIndexRoute
+  AppExperienceIndexRoute: typeof AppExperienceIndexRoute
+  AppGearIndexRoute: typeof AppGearIndexRoute
+  AppProjectsIndexRoute: typeof AppProjectsIndexRoute
+  AppResourcesIndexRoute: typeof AppResourcesIndexRoute
+  AppStackIndexRoute: typeof AppStackIndexRoute
+  AppTestimonialsIndexRoute: typeof AppTestimonialsIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
+  AppBlogIndexRoute: AppBlogIndexRoute,
+  AppCertificationsIndexRoute: AppCertificationsIndexRoute,
+  AppExperienceIndexRoute: AppExperienceIndexRoute,
+  AppGearIndexRoute: AppGearIndexRoute,
+  AppProjectsIndexRoute: AppProjectsIndexRoute,
+  AppResourcesIndexRoute: AppResourcesIndexRoute,
+  AppStackIndexRoute: AppStackIndexRoute,
+  AppTestimonialsIndexRoute: AppTestimonialsIndexRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
