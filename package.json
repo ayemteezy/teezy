@@ -62,5 +62,9 @@
       "lightningcss",
       "sharp"
     ]
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "sharp": true
   }
 }
