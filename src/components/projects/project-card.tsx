@@ -70,7 +70,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 							onClick={() => _handleExternalLink(data.homepageUrl)}
 							disabled={!data.homepageUrl}
 							className="uppercase"
-							size="xs"
+							size="sm"
 						>
 							Live Demo
 							<ArrowUpRightIcon className="ml-1 size-3" />
@@ -79,8 +79,8 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 							onClick={() => _handleExternalLink(data.url)}
 							disabled={!data.url}
 							variant="outline"
-							size="xs"
 							className="text-muted-foreground uppercase"
+							size="sm"
 						>
 							Source
 							<CodeXmlIcon className="ml-1 size-3" />

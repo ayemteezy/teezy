@@ -16,12 +16,7 @@ export const Glance = () => {
 			)}
 		>
 			{GLANCE.map((item) => (
-				<GlanceItem
-					key={item.label}
-					number={item.number}
-					label={item.label}
-					href={item.href}
-				/>
+				<GlanceItem key={item.label} data={item} />
 			))}
 		</div>
 	);

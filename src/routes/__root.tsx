@@ -6,14 +6,11 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 
-import { MobileSidebar } from "@/components/layout/mobile-sidebar";
-import { Navbar } from "@/components/layout/navbar";
-import { Sidebar } from "@/components/layout/sidebar";
-
 import { SITE } from "@/constants/configs/site.config";
 import { ThemeProvider } from "@/providers/theme-provider";
 // import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
+import { NotFound } from "./not-found";
 
 interface MyRouterContext {
 	queryClient: QueryClient;
@@ -69,6 +66,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 		],
 	}),
 	shellComponent: RootDocument,
+	notFoundComponent: NotFound,
 });
 
 function RootDocument() {
@@ -79,9 +77,6 @@ function RootDocument() {
 			</head>
 			<body className="scroll-smooth antialiased">
 				<ThemeProvider defaultTheme="light" storageKey="theme">
-					<Navbar />
-					<MobileSidebar />
-					<Sidebar />
 					<Outlet />
 				</ThemeProvider>
 				{/* <TanStackDevtools

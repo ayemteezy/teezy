@@ -1,6 +1,24 @@
-export const GLANCE = [
-	{ number: "3", label: "projects", href: "/projects" },
-	{ number: "1", label: "hackathons", href: "/hackathons" },
-	{ number: "400 hrs", label: "internship", href: "/experience" },
-	{ number: "4", label: "certifications", href: "/certifications" },
+export type Glance = {
+	number: string;
+	label: string;
+	onClick?: () => void;
+};
+
+export const GLANCE: Glance[] = [
+	{
+		number: "03",
+		label: "projects",
+	},
+	{
+		number: "01",
+		label: "hackathons",
+	},
+	{
+		number: "04",
+		label: "recognitions",
+	},
+	{
+		number: "08",
+		label: "certifications",
+	},
 ];

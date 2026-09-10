@@ -9,7 +9,7 @@ export const CertificationList = () => {
 			{pinnedCertifications.map((cert) => (
 				<div
 					key={cert.url}
-					className="cursor-pointer rounded-xl p-1 shadow-xl/5 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg/10"
+					className="cursor-pointer rounded-xl p-1 shadow-xl/5 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl/10"
 				>
 					<CertificationItem data={cert} />
 				</div>
