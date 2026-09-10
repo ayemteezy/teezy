@@ -5,6 +5,7 @@ import { Hero } from "@/components/hero/hero";
 import { PageHeader } from "@/components/hero/page-header";
 import { Projects } from "@/components/projects/projects";
 import { Stack } from "@/components/stack/stack";
+import { Testimonials } from "@/components/testimonials/testimonials";
 import { useSidebarStore } from "@/store/sidebar-store";
 
 export const Route = createFileRoute("/")({
@@ -37,7 +38,9 @@ function RouteComponent() {
 				{/* certifications */}
 				<Certifications />
 
-				{/* affliations */}
+				{/* testimonials */}
+				<Testimonials />
+
 				<div>Hello</div>
 			</div>
 		</main>
