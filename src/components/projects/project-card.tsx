@@ -10,14 +10,17 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { useRepoLogo } from "@/hooks/use-repo-logo";
+import { cn } from "@/lib/utils";
 import type { PinnedRepo } from "@/types/github";
 
 interface ProjectCardProps {
 	data: PinnedRepo;
+	className?: string;
 }
 
-export const ProjectCard = ({ data }: ProjectCardProps) => {
+export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 	const { src: imageSrc, onError: handleImageError } = useRepoLogo(data.name);
+
 	const _handleExternalLink = (url: string | null) => {
 		if (url) {
 			window.open(url, "_blank", "noopener,noreferrer");
@@ -25,8 +28,13 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 	};
 
 	return (
-		<Card className="w-full cursor-pointer p-0 transition-all duration-200 ease-in-out hover:scale-101 hover:shadow-lg/5">
-			<div className="flex flex-row gap-4 p-4">
+		<Card
+			className={cn(
+				"w-full rounded-xl border border-border/15 bg-background p-4 transition-all duration-300",
+				className,
+			)}
+		>
+			<div className="flex flex-row items-start gap-4">
 				<Image
 					src={imageSrc}
 					onError={handleImageError}
@@ -34,57 +42,62 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 					layout="constrained"
 					width={40}
 					height={40}
-					className="aspect-square size-10 shrink-0 rounded-md shadow-sm"
+					className="shadow/20 aspect-square size-10 shrink-0 select-none rounded-lg object-contain"
 				/>
-				<div className="flex min-w-0 flex-1 flex-col gap-2 p-0">
-					<CardHeader className="p-0">
-						<CardTitle className="h-4 truncate font-pixel text-[16px] leading-none tracking-normal [-webkit-font-smoothing:none] [font-smooth:never]">
+
+				<div className="flex min-w-0 flex-1 flex-col gap-2.5 p-0">
+					<CardHeader className="space-y-1 p-0">
+						<CardTitle className="select-none truncate font-normal font-pixel text-foreground text-lg lowercase tracking-tight">
 							{data.name}
 						</CardTitle>
-						<CardDescription className="line-clamp-2 font-sans">
+						<CardDescription className="line-clamp-2 font-sans text-[0.8125rem] leading-normal">
 							{data.description}
 						</CardDescription>
 					</CardHeader>
-					<CardContent className="flex flex-wrap items-center gap-1 p-0">
+
+					<CardContent className="flex flex-wrap items-center gap-1.5 p-0">
 						{data.languages?.nodes?.map((language) => (
 							<Badge
 								variant="outline"
-								className="max-w-full truncate whitespace-normal text-muted-foreground"
 								key={language.name}
+								className="select-none rounded-md px-2 py-0.5 font-medium font-sans text-[0.71875rem] text-muted-foreground"
 							>
 								{language.name}
 							</Badge>
 						))}
-						{data.repositoryTopics.nodes.map((topic) => (
+						{data.repositoryTopics?.nodes?.map((topic) => (
 							<Badge
 								variant="outline"
-								className="max-w-full truncate whitespace-normal text-muted-foreground capitalize"
 								key={topic.topic.name}
+								className="select-none rounded-md px-2 py-0.5 font-medium font-sans text-[0.71875rem] text-muted-foreground capitalize"
 							>
 								{topic.topic.name}
 							</Badge>
 						))}
 					</CardContent>
-					<div className="mt-2 flex gap-1">
-						<Button
-							onClick={() => _handleExternalLink(data.homepageUrl)}
-							disabled={!data.homepageUrl}
-							className="uppercase"
-							size="sm"
-						>
-							Live Demo
-							<ArrowUpRightIcon className="ml-1 size-3" />
-						</Button>
-						<Button
-							onClick={() => _handleExternalLink(data.url)}
-							disabled={!data.url}
-							variant="outline"
-							className="text-muted-foreground uppercase"
-							size="sm"
-						>
-							Source
-							<CodeXmlIcon className="ml-1 size-3" />
-						</Button>
+
+					<div className="mt-1 flex flex-wrap items-center gap-2">
+						{data.homepageUrl && (
+							<Button
+								onClick={() => _handleExternalLink(data.homepageUrl)}
+								size="sm"
+								className="group/demo flex h-7 items-center gap-1.5 rounded-md px-3 font-sans font-semibold text-[0.75rem] uppercase tracking-wider"
+							>
+								<span>live demo</span>
+								<ArrowUpRightIcon className="size-3 transition-transform duration-300 ease-out group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5" />
+							</Button>
+						)}
+						{data.url && (
+							<Button
+								onClick={() => _handleExternalLink(data.url)}
+								variant="outline"
+								size="sm"
+								className="group/source flex h-7 items-center gap-1.5 rounded-md border-border/80 px-3 font-sans font-semibold text-[0.75rem] text-muted-foreground uppercase tracking-wider"
+							>
+								<CodeXmlIcon className="size-3 transition-all duration-300 ease-out group-hover/source:scale-115" />
+								<span>source</span>
+							</Button>
+						)}
 					</div>
 				</div>
 			</div>
