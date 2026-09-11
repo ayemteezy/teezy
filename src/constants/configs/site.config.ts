@@ -18,8 +18,10 @@ export const SITE = {
 	meta: {
 		title: "Teezy",
 		description:
-			"Portfolio of Laurence Lester Cariño — Full Stack Developer building clean, performant web applications.",
+			"I'm Laurence Lester Cariño, the developer behind Teezy. I'm a Full Stack Developer focused on building clean, performant, and thoughtful web applications.",
 		keywords: [
+			"Teezy",
+			"Laurence Lester Cariño",
 			"full stack developer",
 			"web developer",
 			"portfolio",
