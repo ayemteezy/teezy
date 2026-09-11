@@ -16,7 +16,7 @@ export const AVAILABILITY_CONFIG: Record<
 
 export const SITE = {
 	meta: {
-		title: "Teezy ",
+		title: "Teezy",
 		description:
 			"Portfolio of Laurence Lester Cariño — Full Stack Developer building clean, performant web applications.",
 		keywords: [
@@ -39,7 +39,7 @@ export const SITE = {
 
 	profile: {
 		name: "Laurence Lester Cariño",
-		title: "Full Stack Developer",
+		title: "Full Stack Developer / Aspiring Software Engineer",
 
 		cv: {
 			path: "/documents/CV.pdf",
