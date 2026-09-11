@@ -1,7 +1,10 @@
+import { useNavigate } from "@tanstack/react-router";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "./button";
 
 export const ComingSoon = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="p-4">
 			<div className="w-full space-y-3 antialiased sm:space-y-5">
@@ -21,7 +24,11 @@ export const ComingSoon = () => {
 						or explore another part of the portfolio in the meantime.
 					</p>
 				</div>
-				<Button variant="ghost" className="text-muted-foreground uppercase">
+				<Button
+					onClick={() => navigate({ to: "/" })}
+					variant="ghost"
+					className="text-muted-foreground uppercase"
+				>
 					Return Home <ArrowRightIcon className="ml-1 size-3" />
 				</Button>
 			</div>
