@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import { ArrowUpRightIcon } from "lucide-react";
 import type { Glance } from "@/constants/glance";
 
@@ -6,10 +7,20 @@ interface GlanceItemProps {
 }
 
 export const GlanceItem = ({ data }: GlanceItemProps) => {
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		if (data.type === "navigate") {
+			navigate({ to: data.href });
+		} else {
+			data.run();
+		}
+	};
+
 	return (
 		<button
 			type="button"
-			onClick={data.onClick}
+			onClick={handleClick}
 			className="group block w-full cursor-pointer bg-transparent p-4 text-left transition-colors duration-300 ease-in-out"
 		>
 			<div className="flex items-start gap-1 overflow-hidden font-medium font-pixel text-2xl">

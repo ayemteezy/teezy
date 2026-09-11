@@ -1,7 +1,7 @@
 import { useNavigate } from "@tanstack/react-router";
 import { PlusIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { STACK } from "@/constants/stack";
-import { Button } from "../ui/button";
 import { StackItemBadge } from "./stack-item";
 
 export const StackList = () => {

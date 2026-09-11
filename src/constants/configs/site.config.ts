@@ -28,7 +28,7 @@ export const SITE = {
 			"React developer",
 			"TypeScript",
 		],
-		ogImage: "/images/og-image.jpg",
+		ogImage: "images/og-image.jpg",
 		siteUrl: "https://teezy-dev.vercel.app/",
 		twitterHandle: "@ayemteezy_",
 	},
