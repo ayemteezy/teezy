@@ -17,14 +17,14 @@ export const CTA = () => {
 			</Button>
 
 			<div className="flex flex-wrap items-center">
-				<span className="mr-2 whitespace-nowrap font-mono text-[10px] text-muted-foreground uppercase">
+				<span className="mr-2 whitespace-nowrap font-mono text-[11px] text-muted-foreground uppercase">
 					find me on
 				</span>
 				<div>
 					{SITE.socials.map((social) => (
 						<Button
 							key={social.label}
-							className="px-2 font-mono text-xs"
+							className="px-2 font-mono text-[12px]"
 							variant="link"
 							size="xs"
 							nativeButton={false}

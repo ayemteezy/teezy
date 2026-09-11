@@ -9,7 +9,7 @@ export const Navbar = () => {
 	const { toggleSidebar } = useSidebarStore();
 
 	return (
-		<nav className="fixed top-0 z-100 block w-full border border-b bg-background py-2 lg:hidden">
+		<nav className="sticky top-0 z-100 block w-full border border-b bg-background py-2 lg:hidden">
 			<div className="container flex items-center justify-between">
 				<Link to="/" className="flex items-center gap-2">
 					<Logo />
