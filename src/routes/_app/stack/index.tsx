@@ -8,7 +8,7 @@ export const Route = createFileRoute("/_app/stack/")({
 
 function RouteComponent() {
 	return (
-		<div className="container space-y-6 py-6">
+		<div className="container space-y-6 pt-6 pb-6 lg:pt-12">
 			<PageHeader />
 			<ComingSoon />
 		</div>
