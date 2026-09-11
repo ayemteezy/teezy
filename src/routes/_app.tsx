@@ -9,13 +9,13 @@ export const Route = createFileRoute("/_app")({
 
 function AppLayout() {
 	return (
-		<>
+		<div className="w-full">
 			<Navbar />
 			<Sidebar />
 			<MobileSidebar />
 			<div className="w-full">
 				<Outlet />
 			</div>
-		</>
+		</div>
 	);
 }

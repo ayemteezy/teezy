@@ -11,7 +11,7 @@ export const Hero = () => {
 	const [isExtended, setIsExtended] = useState(false);
 
 	return (
-		<div className="w-full space-y-5 pt-10 lg:pt-0">
+		<div className="w-full space-y-5">
 			<header className="w-full border-border/40 border-b pb-2">
 				<div className="flex select-none flex-row items-center justify-between font-medium font-mono text-[0.65rem] text-muted-foreground uppercase tracking-wider sm:text-xs">
 					<span className="truncate pr-2 font-pixel">
@@ -50,8 +50,8 @@ export const Hero = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col pl-0.5 font-sans text-[0.8125rem] text-muted-foreground leading-relaxed">
-					<p className="text-[0.875rem] leading-[1.65]">
+				<div className="flex flex-col pl-0.5 font-sans text-[0.875rem] text-muted-foreground leading-[1.65] leading-relaxed">
+					<p>
 						I build useful digital spaces with a bias toward clarity,
 						performance, and thoughtful details — interfaces that feel
 						considered rather than assembled, and systems built to last past the
@@ -107,8 +107,7 @@ export const Hero = () => {
 							)}
 						</Button>
 
-						{/* 2. Added explicit top and bottom margins directly to the line to isolate its spacing */}
-						<Separator className="mt-3 mb-1 bg-border/40" />
+						<Separator className="my-1 bg-border/40" />
 
 						<CTA />
 					</div>
