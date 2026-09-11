@@ -25,18 +25,42 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 				content: "width=device-width, initial-scale=1",
 			},
 			{ title: SITE.meta.title },
-			{ name: "description", content: SITE.meta.description },
-			{ name: "keywords", content: SITE.meta.keywords.join(", ") },
-
-			// Open Graph (Facebook, LinkedIn, Discord previews, etc.)
-			{ property: "og:title", content: SITE.meta.title },
-			{ property: "og:description", content: SITE.meta.description },
 			{
+				key: "description",
+				name: "description",
+				content: SITE.meta.description,
+			},
+			{
+				key: "keywords",
+				name: "keywords",
+				content: SITE.meta.keywords.join(", "),
+			},
+
+			{
+				key: "og:title",
+				property: "og:title",
+				content: SITE.meta.title,
+			},
+			{
+				key: "og:description",
+				property: "og:description",
+				content: SITE.meta.description,
+			},
+			{
+				key: "og:image",
 				property: "og:image",
 				content: `${SITE.meta.siteUrl}${SITE.meta.ogImage}`,
 			},
-			{ property: "og:url", content: SITE.meta.siteUrl },
-			{ property: "og:type", content: "website" },
+			{
+				key: "og:url",
+				property: "og:url",
+				content: SITE.meta.siteUrl,
+			},
+			{
+				key: "og:type",
+				property: "og:type",
+				content: "website",
+			},
 
 			// Twitter/X card
 			{ name: "twitter:card", content: "summary_large_image" },

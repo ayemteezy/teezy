@@ -1,207 +1,263 @@
-Welcome to your new TanStack Start app!
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
-# Getting Started
+<a id="readme-top"></a>
 
-To run this application:
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-```bash
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![project_license][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/ayemteezy/teezy">
+    <img src="public/images/logo.jpg" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">Teezy</h3>
+
+  <p align="center">
+    A personal portfolio site built to showcase projects, experience, certifications, and testimonials — with live project data pulled from GitHub instead of being hand-maintained.
+    <br />
+    <a href="https://github.com/ayemteezy/teezy"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://teezy-dev.vercel.app">View Demo</a>
+    &middot;
+    <a href="https://github.com/ayemteezy/teezy/issues/new?labels=bug&template=bug-report.md">Report Bug</a>
+    &middot;
+    <a href="https://github.com/ayemteezy/teezy/issues/new?labels=enhancement&template=feature-request.md">Request Feature</a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#environment-variables">Environment Variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+[![Teezy Screen Shot][product-screenshot]](https://teezy-dev.vercel.app)
+ 
+Teezy is my personal portfolio — a single-page site organized into distinct sections (Stack, Projects, Experience, Certifications, Testimonials) rather than a static one-pager. Pinned projects aren't hand-typed: they're pulled live from the GitHub GraphQL API, so the site reflects what I'm actually building, not a snapshot from whenever I last updated it.
+ 
+The application features:
+ 
+- Pinned GitHub repositories fetched live via the GitHub GraphQL API, with per-repo language and topic tags
+- Structured, data-driven sections for Experience, Certifications, and Testimonials rather than hardcoded markup
+- Logo lookups via logo.dev for certification issuers and project tech
+- A responsive mobile sidebar with scroll-lock and click-outside-to-close behavior
+This project emphasizes clean component architecture, server-side data fetching, and a consistent, restrained design system across every section rather than a grab-bag of styles.
+ 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+- [![React][React]][React-url]
+- [![TypeScript][TypeScript]][TypeScript-url]
+- [![TanStackStart][TanStackStart]][TanStackStart-url]
+- [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+- [![Bun][Bun]][Bun-url]
+- [![Biome][Biome]][Biome-url]
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+- [Bun](https://bun.sh) installed globally
+- A GitHub personal access token (for pinned repos)
+
+### Installation
+
+1. Clone the repo
+
+```sh
+git clone https://github.com/ayemteezy/teezy.git
+```
+
+2. Install dependencies
+
+```sh
 bun install
-bun --bun run dev
 ```
 
-# Building For Production
+3. Set up your environment variables (see below), then run the dev server
 
-To build this application for production:
-
-```bash
-bun --bun run build
+```sh
+bun run dev
 ```
 
-## Styling
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
-
-## Linting & Formatting
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
-
-```bash
-bun --bun run lint
-bun --bun run format
-bun --bun run check
+### Environment Variables
+ 
+Create a `.env` file in the project root with the following:
+ 
+```env
+ GITHUB_TOKEN=your_github_token
+ VITE_LOGO_DEV_TOKEN=your_logo_dev_publishable_key
 ```
+ 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- USAGE EXAMPLES -->
 
-## Deploy to Netlify
+## Usage
 
-This project ships with `netlify.toml` configured for a Netlify site:
+1. Run `bun run dev` and open `http://localhost:3000`
+2. Pinned projects populate automatically from the GitHub API
+3. Static content (Experience, Certifications, Testimonials, Stack) is edited directly in `src/constants/`
 
-1. Push this repo to GitHub
-2. Visit https://app.netlify.com/start and import the repo
-3. Netlify auto-detects the build (`vite build` → `dist/client`)
-4. Open **Site settings → Environment variables** and add anything from `.env.example` that needs a real value in production
-5. Trigger the first deploy
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Server functions and API routes run on Netlify Functions. For lower-latency request handling, see Netlify Edge Functions: https://docs.netlify.com/edge-functions/overview.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- ROADMAP -->
 
+## Roadmap
 
-## Routing
+- [x] GitHub pinned repos integration
+- [x] Certifications with logo.dev lookups
+- [x] Testimonials section
+- [ ] Light/dark theme support
+- [ ] Dedicated blog section
 
-This project uses [TanStack Router](https://tanstack.com/router) with file-based routing. Routes are managed as files in `src/routes`.
+See the [open issues](https://github.com/ayemteezy/teezy/issues) for a full list of proposed features (and known issues).
 
-### Adding A Route
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To add a new route to your application just add a new file in the `./src/routes` directory.
+<!-- CONTRIBUTING -->
 
-TanStack will automatically generate the content of the route file for you.
+## Contributing
 
-Now that you have two routes you can use a `Link` component to navigate between them.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Adding Links
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/react-router`.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-```tsx
-import { Link } from "@tanstack/react-router";
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Then anywhere in your JSX you can use it like so:
+### Top contributors:
 
-```tsx
-<Link to="/about">About</Link>
-```
+<a href="https://github.com/ayemteezy/teezy/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ayemteezy/teezy" alt="contrib.rocks image" />
+</a>
 
-This will create a link that will navigate to the `/about` route.
+<!-- LICENSE -->
 
-More information on the `Link` component can be found in the [Link documentation](https://tanstack.com/router/v1/docs/framework/react/api/router/linkComponent).
+## License
 
-### Using A Layout
+Distributed under the MIT License. See `LICENSE` for more information.
 
-In the File Based Routing setup the layout is located in `src/routes/__root.tsx`. Anything you add to the root route will appear in all the routes. The route content will appear in the JSX where you render `{children}` in the `shellComponent`.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Here is an example layout that includes a header:
+<!-- CONTACT -->
 
-```tsx
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+## Contact
 
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'My App' },
-    ],
-  }),
-  shellComponent: ({ children }) => (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <header>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-          </nav>
-        </header>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  ),
-})
-```
+- Twitter/X: [@ayemteezy\_](https://x.com/ayemteezy_)
+- Email: [laurencelestercarino@gmail.com](mailto:laurencelestercarino@gmail.com)
+- GitHub: [ayemteezy](https://github.com/ayemteezy)
 
-More information on layouts can be found in the [Layouts documentation](https://tanstack.com/router/latest/docs/framework/react/guide/routing-concepts#layouts).
+Project Link: [https://github.com/ayemteezy/tic-tac-toe](https://github.com/ayemteezy/tic-tac-toe)
 
-## Server Functions
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-TanStack Start provides server functions that allow you to write server-side code that seamlessly integrates with your client components.
+<!-- ACKNOWLEDGMENTS -->
 
-```tsx
-import { createServerFn } from '@tanstack/react-start'
+## Acknowledgments
 
-const getServerTime = createServerFn({
-  method: 'GET',
-}).handler(async () => {
-  return new Date().toISOString()
-})
+- [GitHub GraphQL API](https://docs.github.com/en/graphql) — for pinned repository data
+- [logo.dev](https://logo.dev) — for issuer and tech logos
+- [shadcn/ui](https://ui.shadcn.com/) — for base component primitives
+- [Geist](https://vercel.com/font) — for the typeface family
 
-// Use in a component
-function MyComponent() {
-  const [time, setTime] = useState('')
-  
-  useEffect(() => {
-    getServerTime().then(setTime)
-  }, [])
-  
-  return <div>Server time: {time}</div>
-}
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## API Routes
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-You can create API routes by using the `server` property in your route definitions:
+[contributors-shield]: https://img.shields.io/github/contributors/ayemteezy/teezy.svg?style=for-the-badge
+[contributors-url]: https://github.com/ayemteezy/teezy/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ayemteezy/teezy.svg?style=for-the-badge
+[forks-url]: https://github.com/ayemteezy/teezy/network/members
+[stars-shield]: https://img.shields.io/github/stars/ayemteezy/teezy.svg?style=for-the-badge
+[stars-url]: https://github.com/ayemteezy/teezy/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ayemteezy/teezy.svg?style=for-the-badge
+[issues-url]: https://github.com/ayemteezy/teezy/issues
+[license-shield]: https://img.shields.io/github/license/ayemteezy/teezy.svg?style=for-the-badge
+[license-url]: https://github.com/ayemteezy/teezy/blob/main/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/laurence-lester-cari%C3%B1o/
+[product-screenshot]: public/images/og-image.jpg
 
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { json } from '@tanstack/react-start'
-
-export const Route = createFileRoute('/api/hello')({
-  server: {
-    handlers: {
-      GET: () => json({ message: 'Hello, World!' }),
-    },
-  },
-})
-```
-
-## Data Fetching
-
-There are multiple ways to fetch data in your application. You can use TanStack Query to fetch data from a server. But you can also use the `loader` functionality built into TanStack Router to load the data for a route before it's rendered.
-
-For example:
-
-```tsx
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/people')({
-  loader: async () => {
-    const response = await fetch('https://swapi.dev/api/people')
-    return response.json()
-  },
-  component: PeopleComponent,
-})
-
-function PeopleComponent() {
-  const data = Route.useLoaderData()
-  return (
-    <ul>
-      {data.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))}
-    </ul>
-  )
-}
-```
-
-Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/react/guide/data-loading#loader-parameters).
-
-
-
-# Learn More
-
-You can learn more about all of the offerings from TanStack in the [TanStack documentation](https://tanstack.com).
-
-For TanStack Start specific documentation, visit [TanStack Start](https://tanstack.com/start).
+<!-- Shields.io badges. You can a comprehensive list with many more badges at: https://github.com/inttter/md-badges -->
+ 
+[React]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[React-url]: https://react.dev/
+[TypeScript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[TanStackStart]: https://img.shields.io/badge/tanstack_start-ECE8D1?style=for-the-badge&logo=tanstack&logoColor=black&labelColor=ECE8D1&color=ECE8D1
+[TanStackStart-url]: https://tanstack.com/start
+[TailwindCSS]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/
+[Bun]: https://img.shields.io/badge/bun-%23000000.svg?style=for-the-badge&logo=bun&logoColor=white
+[Bun-url]: https://bun.sh/
+[Biome]: https://img.shields.io/badge/biome-%2360A5FA.svg?style=for-the-badge&logo=biome&logoColor=white
+[Biome-url]: https://biomejs.dev/
