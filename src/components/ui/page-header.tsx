@@ -18,7 +18,7 @@ export const PageHeader = () => {
 		<div className="w-full space-y-3 antialiased sm:space-y-5">
 			<div className="space-y-1.5 sm:space-y-2">
 				<div className="flex select-none flex-row items-center justify-between border-border/40 border-b pb-1.5 font-medium font-mono text-[0.65rem] text-muted-foreground uppercase tracking-wider sm:text-xs">
-					<span className="truncate pr-2">
+					<span className="truncate pr-2 font-pixel">
 						teezy
 						<span className="font-light text-muted-foreground/40"> / </span>
 						<span className="font-semibold text-muted-foreground">
