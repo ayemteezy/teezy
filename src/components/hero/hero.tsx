@@ -50,7 +50,7 @@ export const Hero = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col pl-0.5 font-sans text-[0.875rem] text-muted-foreground leading-[1.65] leading-relaxed">
+				<div className="flex flex-col pl-0.5 font-sans text-[0.875rem] text-muted-foreground leading-normal">
 					<p>
 						I build useful digital spaces with a bias toward clarity,
 						performance, and thoughtful details — interfaces that feel
