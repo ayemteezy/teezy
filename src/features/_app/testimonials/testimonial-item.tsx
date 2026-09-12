@@ -36,7 +36,7 @@ export const TestimonialItem = ({ data }: TestimonialItemProps) => {
 							<p className="truncate font-sans font-semibold text-foreground text-xs">
 								{data.name}
 							</p>
-							<span className="block truncate font-mono text-[0.625rem] text-muted-foreground tracking-wider">
+							<span className="block truncate font-mono text-[0.625rem] text-muted-foreground uppercase tracking-wider">
 								{data.role}
 							</span>
 						</div>
