@@ -29,7 +29,7 @@ export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 	return (
 		<Card
 			className={cn(
-				"w-full rounded-xl border border-border/15 bg-background p-4 transition-all duration-300",
+				"w-full rounded-xl border border-border/15 p-4 transition-all duration-300",
 				className,
 			)}
 		>
@@ -40,7 +40,7 @@ export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 						alt=""
 						width={40}
 						height={40}
-						className="aspect-square size-10 shrink-0 select-none rounded-lg object-contain"
+						className="aspect-square size-10 shrink-0 select-none rounded-lg object-contain shadow"
 					/>
 				) : (
 					<div className="size-10 shrink-0 rounded-lg bg-muted/50" />

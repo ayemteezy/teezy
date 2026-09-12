@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-router";
 
 import { SITE } from "@/constants/configs/site.config";
+import { ModalProvider } from "@/providers/modal-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 // import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
@@ -111,6 +112,7 @@ function RootDocument() {
 				<ThemeProvider defaultTheme="light" storageKey="theme">
 					<Outlet />
 				</ThemeProvider>
+				<ModalProvider />
 				{/* <TanStackDevtools
 					config={{
 						position: "bottom-right",
