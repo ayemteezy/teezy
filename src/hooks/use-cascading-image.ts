@@ -1,21 +1,55 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-/**
- * Tries a list of image URLs in order, advancing to the next one each time
- * the current candidate fails to load. Returns the URL to render and the
- * onError handler to wire into an <img>/Image component.
- *
- * Once the last candidate also fails, it stays there — there's no further
- * fallback to offer, so the element renders in its native broken-image state.
- */
+const imageCache = new Map<string, string>();
+
 export const useCascadingImage = (candidates: string[]) => {
-  const [index, setIndex] = useState(0);
+	const [src, setSrc] = useState<string | null>(() => {
+		return candidates.find((candidate) => imageCache.has(candidate)) ?? null;
+	});
 
-  const src = candidates[index];
+	useEffect(() => {
+		let cancelled = false;
 
-  const onError = () => {
-    setIndex((i) => Math.min(i + 1, candidates.length - 1));
-  };
+		const cached = candidates.find((candidate) => imageCache.has(candidate));
 
-  return { src, onError };
+		if (cached) {
+			setSrc(cached);
+			return;
+		}
+
+		setSrc(null);
+
+		const loadNext = (index: number) => {
+			if (index >= candidates.length) {
+				return;
+			}
+
+			const candidate = candidates[index];
+			const image = new window.Image();
+
+			image.onload = () => {
+				imageCache.set(candidate, candidate);
+
+				if (!cancelled) {
+					setSrc(candidate);
+				}
+			};
+
+			image.onerror = () => {
+				loadNext(index + 1);
+			};
+
+			image.src = candidate;
+		};
+
+		loadNext(0);
+
+		return () => {
+			cancelled = true;
+		};
+	}, [candidates]);
+
+	return {
+		src,
+	};
 };

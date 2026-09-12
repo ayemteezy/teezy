@@ -114,10 +114,10 @@ export const getCachedContributions = createServerFn({ method: "GET" }).handler(
 	},
 );
 
-interface GitHubLanguage {
+export type GitHubLanguage = {
 	name: string;
 	percent: number;
-}
+};
 
 export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 	async (): Promise<GitHubLanguage[]> => {

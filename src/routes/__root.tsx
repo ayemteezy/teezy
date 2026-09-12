@@ -32,58 +32,49 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 
 		return {
 			meta: [
-				{ key: "charset", charSet: "utf-8" },
+				{ charSet: "utf-8" },
 				{
-					key: "viewport",
 					name: "viewport",
 					content: "width=device-width, initial-scale=1",
 				},
 				{ title: dynamicTitle },
 				{
-					key: "description",
 					name: "description",
 					content: SITE.meta.description,
 				},
 				{
-					key: "keywords",
 					name: "keywords",
 					content: SITE.meta.keywords.join(", "),
 				},
 
-				// Open Graph Keys
-				{ key: "og:title", property: "og:title", content: dynamicTitle },
+				// Open Graph
+				{ property: "og:title", content: dynamicTitle },
 				{
-					key: "og:description",
 					property: "og:description",
 					content: SITE.meta.description,
 				},
 				{
-					key: "og:image",
 					property: "og:image",
 					content: `${SITE.meta.siteUrl}${SITE.meta.ogImage}`,
 				},
-				{ key: "og:url", property: "og:url", content: SITE.meta.siteUrl },
-				{ key: "og:type", property: "og:type", content: "website" },
+				{ property: "og:url", content: SITE.meta.siteUrl },
+				{ property: "og:type", content: "website" },
 
-				// Twitter/X Keys
+				// Twitter/X
 				{
-					key: "twitter:card",
 					name: "twitter:card",
 					content: "summary_large_image",
 				},
-				{ key: "twitter:title", name: "twitter:title", content: dynamicTitle },
+				{ name: "twitter:title", content: dynamicTitle },
 				{
-					key: "twitter:description",
 					name: "twitter:description",
 					content: SITE.meta.description,
 				},
 				{
-					key: "twitter:image",
 					name: "twitter:image",
 					content: `${SITE.meta.siteUrl}${SITE.meta.ogImage}`,
 				},
 				{
-					key: "twitter:site",
 					name: "twitter:site",
 					content: SITE.meta.twitterHandle,
 				},

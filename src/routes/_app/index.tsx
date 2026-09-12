@@ -1,15 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Certifications } from "@/components/certifications/certifications";
-import { Experience } from "@/components/experience/experience";
-import { Hero } from "@/components/hero/hero";
 import { Footer } from "@/components/layout/footer";
-import { Projects } from "@/components/projects/projects";
-import { Stack } from "@/components/stack/stack";
-import { Telemetry } from "@/components/telemetry/telemetry";
-import { Testimonials } from "@/components/testimonials/testimonials";
+import { githubLanguagesQuery, pinnedReposQuery } from "@/data/queries";
+import { Certifications } from "@/features/_app/certifications/certifications";
+import { Experience } from "@/features/_app/experience/experience";
+import { Hero } from "@/features/_app/hero/hero";
+import { Projects } from "@/features/_app/projects/projects";
+import { Stack } from "@/features/_app/stack/stack";
+import { Telemetry } from "@/features/_app/telemetry/telemetry";
+import { Testimonials } from "@/features/_app/testimonials/testimonials";
 import { useSidebarStore } from "@/store/sidebar-store";
 
 export const Route = createFileRoute("/_app/")({
+	loader: async ({ context }) => {
+		await Promise.all([
+			context.queryClient.query(githubLanguagesQuery),
+			context.queryClient.query(pinnedReposQuery),
+		]);
+	},
 	component: RouteComponent,
 });
 

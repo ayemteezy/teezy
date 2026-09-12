@@ -12,12 +12,12 @@ interface TestimonialItemProps {
 export const TestimonialItem = ({ data }: TestimonialItemProps) => {
 	return (
 		<Link to="/testimonials" className="block w-full">
-			<Card className="flex h-50 flex-col rounded-xl bg-foreground/2 p-4 shadow-lg/7 ring-0 transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl/8">
+			<Card className="flex h-55 flex-col gap-0 rounded-xl px-4 transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl/7">
 				<div className="flex min-h-0 flex-1 flex-col">
 					<QuoteIcon className="size-4 shrink-0 fill-muted-foreground/10 text-muted-foreground/20" />
 
 					<div className="mt-1.5 min-h-0 flex-1 overflow-hidden">
-						<p className="line-clamp-4 font-normal font-sans text-[0.8125rem] leading-normal">
+						<p className="line-clamp-5 font-normal font-sans leading-normal">
 							{data.quote}
 						</p>
 					</div>

@@ -1,4 +1,3 @@
-import { Image } from "@unpic/react";
 import { ArrowUpRightIcon, CodeXmlIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,7 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ data, className }: ProjectCardProps) => {
-	const { src: imageSrc, onError: handleImageError } = useRepoLogo(data.name);
+	const { src: imageSrc } = useRepoLogo(data.name);
 
 	const _handleExternalLink = (url: string | null) => {
 		if (url) {
@@ -35,15 +34,17 @@ export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 			)}
 		>
 			<div className="flex flex-row items-start gap-4">
-				<Image
-					src={imageSrc}
-					onError={handleImageError}
-					alt={`${data.name}'s logo`}
-					layout="constrained"
-					width={40}
-					height={40}
-					className="shadow/20 aspect-square size-10 shrink-0 select-none rounded-lg object-contain"
-				/>
+				{imageSrc ? (
+					<img
+						src={imageSrc}
+						alt=""
+						width={40}
+						height={40}
+						className="aspect-square size-10 shrink-0 select-none rounded-lg object-contain"
+					/>
+				) : (
+					<div className="size-10 shrink-0 rounded-lg bg-muted/50" />
+				)}
 
 				<div className="flex min-w-0 flex-1 flex-col gap-2.5 p-0">
 					<CardHeader className="space-y-1 p-0">
