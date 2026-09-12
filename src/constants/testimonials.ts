@@ -11,7 +11,7 @@ export type Testimonial = {
 export const TESTIMONIALS: Testimonial[] = [
 	{
 		name: "Via Cabactulan",
-		role: "Project Partner/Collaborator",
+		role: "Project Partner",
 		quote:
 			"It was smooth and productive. You kept the code organized and you paid close attention to the design details, which helped the project stay structured and look consistent. You were easy to work with, and got things done on schedule. Your organization, attention to detail, and reliability made the project easier to manage and helped us move forward successfully.",
 		initials: "VC",
