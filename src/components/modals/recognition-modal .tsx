@@ -21,7 +21,7 @@ export const RecognitionModal = () => {
 		<Dialog open onOpenChange={(open) => !open && close()}>
 			<DialogContent>
 				<DialogHeader className="py-2">
-					<span className="text-muted-foreground text-xs uppercase">
+					<span className="font-medium text-muted-foreground/60 text-xs uppercase">
 						awards
 					</span>
 					<DialogTitle className="font-pixel text-xl">

@@ -24,7 +24,7 @@ export const STACK: StackCategory[] = [
 			{ name: "Node.js", pinned: true },
 			{ name: "Bun", pinned: true },
 			{ name: "Express.js" },
-			{ name: "Prisma ORM" },
+			{ name: "Prisma" },
 			{ name: "Drizzle ORM" },
 			{ name: "PostgreSQL", pinned: true },
 			{ name: "MongoDB" },
