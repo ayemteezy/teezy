@@ -5,7 +5,7 @@ export function NotFound() {
 	const router = useRouter();
 
 	return (
-		<main className="grid min-h-screen place-items-center bg-background px-6 py-24 sm:py-32 lg:px-8">
+		<main className="grid min-h-dvh place-items-center bg-background px-6 py-24 sm:py-32 lg:px-8">
 			<div className="text-center">
 				<p className="inline-block select-none rounded-md border border-border/40 bg-muted/50 px-3 py-1.5 font-bold font-pixel text-[10px] text-muted-foreground uppercase tracking-[0.25em] sm:text-xs">
 					[ ERROR_404 ]
