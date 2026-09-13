@@ -10,10 +10,10 @@ export const Route = createFileRoute("/_app")({
 
 function AppLayout() {
 	return (
-		<div className="flex h-screen w-full overflow-hidden">
+		<div className="flex h-dvh w-full overflow-hidden">
 			<Sidebar />
 
-			<div className="flex h-full min-w-0 flex-1 flex-col overflow-y-auto">
+			<div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto">
 				<Navbar />
 				<MobileSidebar />
 
