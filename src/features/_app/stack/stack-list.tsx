@@ -12,13 +12,12 @@ export const StackList = () => {
 	);
 
 	return (
-		<div className="flex flex-wrap gap-2">
+		<div className="flex flex-wrap items-center gap-2">
 			{_pinnedStack.map((_stack) => (
 				<StackItemBadge key={_stack.name} data={_stack} />
 			))}
 			<Button
 				variant="outline"
-				size="sm"
 				onClick={() => _navigate({ to: "/stack" })}
 				className="border border-dashed text-muted-foreground hover:border-primary hover:bg-transparent"
 			>
