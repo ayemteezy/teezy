@@ -3,9 +3,9 @@ import { CertificationItem } from "./certification-item";
 
 export const Certifications = () => {
 	return (
-		<div className="mb-12 space-y-4">
+		<div className="mb-12">
 			{CERTIFICATIONS.map((category) => (
-				<div key={category.name}>
+				<div key={category.name} className="space-y-4">
 					<h2 className="font-medium text-muted-foreground/60 text-xs uppercase">
 						{category.name}
 					</h2>
