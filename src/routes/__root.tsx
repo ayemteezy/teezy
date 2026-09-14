@@ -11,6 +11,7 @@ import { ModalProvider } from "@/providers/modal-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 // import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
+import { AppLoader } from "./loader";
 import { NotFound } from "./not-found";
 
 interface MyRouterContext {
@@ -98,6 +99,9 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			],
 		};
 	},
+	loader: async () => {
+		await new Promise((resolve) => setTimeout(resolve, 2000));
+	},
 	shellComponent: RootDocument,
 	notFoundComponent: NotFound,
 });
@@ -109,10 +113,12 @@ function RootDocument() {
 				<HeadContent />
 			</head>
 			<body className="scroll-smooth antialiased">
-				<ThemeProvider defaultTheme="light" storageKey="theme">
-					<Outlet />
-				</ThemeProvider>
-				<ModalProvider />
+				<AppLoader>
+					<ThemeProvider defaultTheme="light" storageKey="theme">
+						<Outlet />
+					</ThemeProvider>
+					<ModalProvider />
+				</AppLoader>
 				{/* <TanStackDevtools
 					config={{
 						position: "bottom-right",
