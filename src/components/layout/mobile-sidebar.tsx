@@ -27,15 +27,16 @@ export const MobileSidebar = () => {
 		<>
 			<div
 				className={cn(
-					"fixed inset-0 z-100 bg-black/50 transition-opacity duration-300 ease-in-out",
+					"fixed inset-0 z-100 bg-black/50 transition-opacity duration-300 ease-in-out lg:hidden",
 					isOpen ? "opacity-100" : "pointer-events-none opacity-0",
 				)}
 				onClick={closeSidebar}
 				aria-hidden="true"
 			/>
+
 			<aside
 				className={cn(
-					"fixed top-0 right-0 bottom-0 z-100 w-full border-l bg-background transition-transform duration-300 ease-in-out sm:w-1/3",
+					"fixed top-0 right-0 bottom-0 z-100 w-full border-l bg-background transition-transform duration-300 ease-in-out sm:w-1/3 lg:hidden",
 					isOpen ? "translate-x-0" : "translate-x-full",
 				)}
 			>
