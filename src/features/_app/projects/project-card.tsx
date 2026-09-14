@@ -1,4 +1,10 @@
-import { Card } from "@/components/ui/card";
+import { useNavigate } from "@tanstack/react-router";
+import {
+	Card,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
 import { useRepoLogo } from "@/hooks/use-repo-logo";
 import { cn } from "@/lib/utils";
 import type { PinnedRepo } from "@/types/github";
@@ -9,13 +15,15 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ data, className }: ProjectCardProps) => {
+	const navigate = useNavigate();
 	const { src: imageSrc } = useRepoLogo(data.name);
 
 	return (
 		<Card
+			onClick={() => navigate({ to: "/projects" })}
 			className={cn(
-				"w-full rounded-xl border border-border/15 px-4 py-3.5",
-				"transition-colors duration-200 hover:bg-accent/30",
+				"w-full cursor-pointer rounded-xl border border-border/15 px-4 py-3.5",
+				"transition-all duration-200 ease-in-out hover:scale-105 hover:bg-accent/30 hover:shadow-md/5",
 				className,
 			)}
 		>
@@ -24,10 +32,10 @@ export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 					<img
 						src={imageSrc}
 						alt=""
-						width={40}
-						height={40}
+						width={36}
+						height={36}
 						loading="lazy"
-						className="size-10 shrink-0 select-none rounded-lg object-contain"
+						className="shrink-0 select-none rounded-lg object-contain"
 					/>
 				) : (
 					<div
@@ -36,15 +44,15 @@ export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 					/>
 				)}
 
-				<div className="min-w-0 flex-1">
-					<h3 className="truncate font-normal font-pixel text-lg tracking-tight">
+				<CardHeader className="min-w-0 flex-1 p-0">
+					<CardTitle className="select-none truncate font-normal font-pixel text-base lowercase tracking-tight">
 						{data.name}
-					</h3>
+					</CardTitle>
 
-					<p className="mt-1 line-clamp-2 font-sans text-[0.8125rem] text-muted-foreground leading-relaxed">
+					<CardDescription className="line-clamp-2 font-sans text-[0.8125rem] leading-relaxed">
 						{data.description}
-					</p>
-				</div>
+					</CardDescription>
+				</CardHeader>
 			</div>
 		</Card>
 	);

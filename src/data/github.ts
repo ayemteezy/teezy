@@ -1,18 +1,24 @@
 import { createServerFn } from "@tanstack/react-start";
 import { GITHUB } from "@/constants/configs/github.config";
-import type { PinnedRepo } from "@/types/github";
+import type {
+	GetPinnedReposInput,
+	GitHubLanguage,
+	GitHubPinnedReposResponse,
+	PinnedRepo,
+} from "@/types/github";
 
-export const getPinnedRepos = createServerFn({ method: "GET" }).handler(
-	async (): Promise<PinnedRepo[]> => {
-		const token = process.env.VITE_GITHUB_TOKEN || process.env.GITHUB_TOKEN;
+export const getPinnedRepos = createServerFn({ method: "GET" })
+	.validator((data: GetPinnedReposInput) => data)
+	.handler(async ({ data }): Promise<PinnedRepo[]> => {
+		const limit = Math.min(Math.max(data.limit ?? 6, 1), 6);
+
+		const token = process.env.GITHUB_TOKEN;
 
 		if (!token) {
-			throw new Error(
-				"Missing GitHub token — set VITE_GITHUB_TOKEN or GITHUB_TOKEN in .env",
-			);
+			throw new Error("Missing GITHUB_TOKEN.");
 		}
 
-		const _response = await fetch(GITHUB.api.graphql, {
+		const response = await fetch(GITHUB.api.graphql, {
 			method: "POST",
 			headers: {
 				Authorization: `Bearer ${token}`,
@@ -20,9 +26,12 @@ export const getPinnedRepos = createServerFn({ method: "GET" }).handler(
 			},
 			body: JSON.stringify({
 				query: `
-          query {
-            user(login: "${GITHUB.username}") {
-              pinnedItems(first: ${GITHUB.pinnedRepos.limit}, types: REPOSITORY) {
+          query PinnedRepositories($login: String!, $limit: Int!) {
+            user(login: $login) {
+              pinnedItems(
+                first: $limit
+                types: REPOSITORY
+              ) {
                 nodes {
                   ... on Repository {
                     id
@@ -30,9 +39,13 @@ export const getPinnedRepos = createServerFn({ method: "GET" }).handler(
                     description
                     url
                     homepageUrl
-                    stargazerCount
-                    forkCount
-                    languages(first: 100, orderBy: {field: SIZE, direction: DESC}) {
+                    languages(
+                      first: 4
+                      orderBy: {
+                        field: SIZE
+                        direction: DESC
+                      }
+                    ) {
                       nodes {
                         name
                       }
@@ -50,74 +63,37 @@ export const getPinnedRepos = createServerFn({ method: "GET" }).handler(
             }
           }
         `,
+				variables: {
+					login: GITHUB.username,
+					limit,
+				},
 			}),
 		});
 
-		if (!_response.ok) {
-			throw new Error(`GitHub API responded with ${_response.status}`);
+		if (!response.ok) {
+			throw new Error(`GitHub API responded with ${response.status}`);
 		}
 
-		const _json = await _response.json();
+		const json = (await response.json()) as GitHubPinnedReposResponse;
 
-		if (_json.errors) {
-			throw new Error(_json.errors[0]?.message ?? "GitHub GraphQL error");
+		if (json.errors?.length) {
+			throw new Error(json.errors[0]?.message ?? "GitHub GraphQL error");
 		}
 
-		if (!_json.data?.user) {
+		if (!json.data?.user) {
 			throw new Error(`No GitHub user found for "${GITHUB.username}"`);
 		}
 
-		return _json.data.user.pinnedItems.nodes;
-	},
-);
-
-// Defining types based on the api.jogruber.de schema
-interface ContributionDay {
-	date: string;
-	count: number;
-	level: number;
-}
-
-interface ApiResponse {
-	total: Record<string, number>;
-	contributions: ContributionDay[];
-}
-
-export const getCachedContributions = createServerFn({ method: "GET" }).handler(
-	async () => {
-		const url = new URL(
-			`/v4/${GITHUB.username}`,
-			"https://github-contributions-api.jogruber.de",
-		);
-
-		const response = await fetch(url, {
-			headers: {
-				"Cache-Control":
-					"public, max-age=86400, s-maxage=86400, stale-while-revalidate=60",
-			},
-		});
-
-		if (!response.ok) {
-			throw new Error(
-				`Contributions API responded with status ${response.status}`,
-			);
-		}
-
-		const data = (await response.json()) as ApiResponse;
-		const currentYear = new Date().getFullYear().toString();
-		const total = data.total[currentYear] ?? 0;
-
-		return {
-			contributions: data.contributions,
-			total,
-		};
-	},
-);
-
-export type GitHubLanguage = {
-	name: string;
-	percent: number;
-};
+		return json.data.user.pinnedItems.nodes.map((repo) => ({
+			id: repo.id,
+			name: repo.name,
+			description: repo.description,
+			url: repo.url,
+			homepageUrl: repo.homepageUrl,
+			languages: repo.languages.nodes.map((language) => language.name),
+			topics: repo.repositoryTopics.nodes.map(({ topic }) => topic.name),
+		}));
+	});
 
 export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 	async (): Promise<GitHubLanguage[]> => {
@@ -134,12 +110,10 @@ export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 			Accept: "application/vnd.github+json",
 		};
 
-		// Authentication is optional for public repositories.
 		if (token) {
 			headers.Authorization = `Bearer ${token}`;
 		}
 
-		// Step 1: Get the user's repositories
 		const reposResponse = await fetch(
 			`https://api.github.com/users/${encodeURIComponent(username)}/repos?per_page=100&type=owner`,
 			{ headers },
@@ -157,7 +131,6 @@ export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 			archived: boolean;
 		}>;
 
-		// Step 2: Get language statistics for each repository
 		const languageResults = await Promise.all(
 			repos
 				.filter((repo) => !repo.fork && !repo.archived)
@@ -178,7 +151,6 @@ export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 				}),
 		);
 
-		// Step 3: Aggregate language bytes
 		const languageMap: Record<string, number> = {};
 
 		for (const languages of languageResults) {
@@ -187,7 +159,6 @@ export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 			}
 		}
 
-		// Step 4: Calculate total bytes
 		const totalBytes = Object.values(languageMap).reduce(
 			(total, bytes) => total + bytes,
 			0,
@@ -197,7 +168,6 @@ export const getGitHubLanguages = createServerFn({ method: "GET" }).handler(
 			return [];
 		}
 
-		// Step 5: Calculate percentages
 		return Object.entries(languageMap)
 			.map(([name, bytes]) => ({
 				name,

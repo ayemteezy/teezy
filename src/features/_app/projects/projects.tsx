@@ -1,17 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { SectionHeader } from "@/components/ui/section-header";
-import { GITHUB } from "@/constants/configs/github.config";
-import { getPinnedRepos } from "@/data/github";
+import { pinnedReposQuery } from "@/data/queries";
 import { ProjectList } from "./project-list";
 
 export const Projects = () => {
 	const navigate = useNavigate();
-	const { data, isLoading, error } = useQuery({
-		queryKey: ["pinned-repos", GITHUB.username],
-		queryFn: () => getPinnedRepos(),
-		staleTime: GITHUB.pinnedRepos.staleTimeMs,
-	});
+	const { data, isLoading, error } = useQuery(pinnedReposQuery(3));
 
 	return (
 		<section className="space-y-6">

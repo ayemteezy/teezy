@@ -8,8 +8,11 @@ export const githubLanguagesQuery = queryOptions({
 	staleTime: 1000 * 60 * 30,
 });
 
-export const pinnedReposQuery = queryOptions({
-	queryKey: ["pinned-repos", GITHUB.username],
-	queryFn: () => getPinnedRepos(),
+export const pinnedReposQuery = (limit?: number) => ({
+	queryKey: ["pinned-repos", GITHUB.username, limit ?? "all"],
+	queryFn: () =>
+		getPinnedRepos({
+			data: limit === undefined ? {} : { limit },
+		}),
 	staleTime: GITHUB.pinnedRepos.staleTimeMs,
 });
