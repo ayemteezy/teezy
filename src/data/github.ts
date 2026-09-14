@@ -39,6 +39,8 @@ export const getPinnedRepos = createServerFn({ method: "GET" })
                     description
                     url
                     homepageUrl
+                    createdAt
+
                     languages(
                       first: 4
                       orderBy: {
@@ -50,6 +52,7 @@ export const getPinnedRepos = createServerFn({ method: "GET" })
                         name
                       }
                     }
+
                     repositoryTopics(first: 5) {
                       nodes {
                         topic {
@@ -90,6 +93,7 @@ export const getPinnedRepos = createServerFn({ method: "GET" })
 			description: repo.description,
 			url: repo.url,
 			homepageUrl: repo.homepageUrl,
+			createdAt: repo.createdAt,
 			languages: repo.languages.nodes.map((language) => language.name),
 			topics: repo.repositoryTopics.nodes.map(({ topic }) => topic.name),
 		}));

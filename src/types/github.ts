@@ -4,6 +4,7 @@ export interface PinnedRepo {
 	description: string | null;
 	url: string;
 	homepageUrl: string | null;
+	createdAt: string;
 	languages: string[];
 	topics: string[];
 }
@@ -12,12 +13,13 @@ export interface GetPinnedReposInput {
 	limit?: number;
 }
 
-export interface GitHubPinnedRepo {
+interface GitHubPinnedRepo {
 	id: string;
 	name: string;
 	description: string | null;
 	url: string;
 	homepageUrl: string | null;
+	createdAt: string;
 	languages: {
 		nodes: {
 			name: string;

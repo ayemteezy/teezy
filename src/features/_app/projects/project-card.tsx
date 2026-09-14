@@ -1,4 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
+import { Image } from "@unpic/react";
 import {
 	Card,
 	CardDescription,
@@ -29,7 +30,7 @@ export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 		>
 			<div className="flex items-start gap-4">
 				{imageSrc ? (
-					<img
+					<Image
 						src={imageSrc}
 						alt=""
 						width={36}
