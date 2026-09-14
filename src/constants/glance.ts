@@ -18,7 +18,7 @@ export const GLANCE: Glance[] = [
 		run: () => useModalStore.getState().open("hackathons"),
 	},
 	{
-		number: "04",
+		number: "03",
 		label: "recognitions",
 		type: "action",
 		run: () => useModalStore.getState().open("recognitions"),
