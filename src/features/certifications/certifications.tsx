@@ -3,9 +3,9 @@ import { CertificationItem } from "./certification-item";
 
 export const Certifications = () => {
 	return (
-		<div className="space-y-4">
+		<div className="mb-12 space-y-4">
 			{CERTIFICATIONS.map((category) => (
-				<>
+				<div key={category.name}>
 					<h2 className="font-medium text-muted-foreground/60 text-xs uppercase">
 						{category.name}
 					</h2>
@@ -14,7 +14,7 @@ export const Certifications = () => {
 							<CertificationItem key={cert.url} data={cert} />
 						))}
 					</div>
-				</>
+				</div>
 			))}
 		</div>
 	);
