@@ -9,7 +9,7 @@ export const Stack = () => {
 					key={category.label}
 					className="grid gap-4 sm:grid-cols-[120px_1fr] sm:gap-8"
 				>
-					<h2 className="pt-1 font-mono text-muted-foreground/60 text-xs uppercase">
+					<h2 className="pt-1 font-medium font-mono text-muted-foreground/60 text-xs uppercase">
 						{category.label}
 					</h2>
 

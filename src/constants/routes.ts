@@ -56,35 +56,35 @@ export const NAV_SECTIONS: NavSectionType[] = [
 				href: ROUTES.EXPLORE.STACK,
 				accent: "tech stack",
 				description:
-					"A comprehensive index of the programming languages, database layers, runtimes, and engineering frameworks I use daily.",
+					"A collection of the languages, frameworks, runtimes, databases, and tools I use to build web applications.",
 			},
 			{
 				label: "projects",
 				href: ROUTES.EXPLORE.PROJECTS,
 				accent: "selected work",
 				description:
-					"A directory of full-stack platforms, open-source utilities, and digital tools I have designed and deployed into production.",
+					"A selection of personal, academic, and practical projects showcasing how I build and solve problems with code.",
 			},
 			{
 				label: "experience",
 				href: ROUTES.EXPLORE.EXPERIENCE,
-				accent: "work history",
+				accent: "experience",
 				description:
-					"Tracking my professional software development timeline — spanning full-stack roles, client services, and application architecture builds.",
+					"A timeline of my internship, academic, mentoring, and hands-on experience in software and web development.",
 			},
 			{
 				label: "certifications",
 				href: ROUTES.EXPLORE.CERTIFICATIONS,
 				accent: "credentials",
 				description:
-					"Verified platform validations, professional technical credentials, and engineering specializations mapping my skills.",
+					"A collection of certifications and technical credentials that reflect my continued learning and development.",
 			},
 			{
 				label: "testimonials",
 				href: ROUTES.EXPLORE.TESTIMONIALS,
 				accent: "recommendations",
 				description:
-					"Collected reviews, feedback logs, and collaborative notes from technical directors, engineering teammates, and project clients.",
+					"Feedback and recommendations from people I have worked with through projects, internships, and academic work.",
 			},
 		],
 	},
@@ -95,9 +95,9 @@ export const NAV_SECTIONS: NavSectionType[] = [
 				label: "blog",
 				href: ROUTES.PERSONAL.BLOG,
 				icon: SquareTextIcon,
-				accent: "insights & publications",
+				accent: "insights & notes",
 				description:
-					"Deep-dives, framework reviews, and written logs breaking down software architecture patterns and engineering problems.",
+					"Notes, lessons, and practical write-ups about things I learn while building and exploring software development.",
 			},
 			{
 				label: "gear",
@@ -105,15 +105,15 @@ export const NAV_SECTIONS: NavSectionType[] = [
 				icon: LaptopMinimalIcon,
 				accent: "workspace setup",
 				description:
-					"A curated log detailing my workspace setup, localized server hardware, terminal themes, and development configurations.",
+					"A look at the hardware, software, and development tools I use for coding, learning, and building projects.",
 			},
 			{
 				label: "resources",
 				href: ROUTES.PERSONAL.RESOURCES,
 				icon: BookOpenIcon,
-				accent: "knowledge base",
+				accent: "useful resources",
 				description:
-					"An open collection of engineering whitepapers, reference code modules, design systems, and educational toolkits.",
+					"A collection of useful references, documentation, tools, and learning resources I find helpful.",
 			},
 		],
 	},
