@@ -14,7 +14,7 @@ export const Route = createFileRoute("/_app/")({
 	loader: async ({ context }) => {
 		await Promise.all([
 			context.queryClient.query(githubLanguagesQuery),
-			context.queryClient.query(pinnedReposQuery),
+			context.queryClient.query(pinnedReposQuery(3)),
 		]);
 	},
 	component: RouteComponent,
