@@ -157,6 +157,11 @@ main {
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
+  }
+  *:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
   }
   body {
     @apply bg-background text-foreground;

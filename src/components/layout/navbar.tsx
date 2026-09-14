@@ -17,7 +17,7 @@ export const Navbar = () => {
 				</Link>
 				<div className="flex items-center gap-2">
 					<Button
-						className="flex w-fit rounded-sm font-mono uppercase lg:hidden"
+						className="flex w-fit rounded-sm font-mono uppercase"
 						size="lg"
 					>
 						<a href={SITE.profile.cv.path} download={SITE.profile.cv.filename}>
