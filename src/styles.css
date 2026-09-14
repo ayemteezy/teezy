@@ -185,7 +185,12 @@ main {
 @utility page-container {
   @apply mx-auto w-full px-4;
 
+  @media (min-width: 48rem) {
+    @apply max-w-180;
+  }
+
   @media (min-width: 64rem) {
     @apply max-w-200;
   }
 }
+
