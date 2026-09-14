@@ -16,7 +16,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 	const tags = [...data.languages, ...data.topics];
 
 	return (
-		<article className="flex gap-4 border-t py-4">
+		<article className="flex cursor-pointer gap-4 p-4 transition-all duration-200 ease-in-out hover:bg-accent">
 			{/* Logo */}
 			{imageSrc ? (
 				<Image

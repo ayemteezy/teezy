@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ComingSoon } from "@/components/ui/coming-soon";
 import { PageHeader } from "@/components/ui/page-header";
+import { Certifications } from "@/features/certifications/certifications";
 
 export const Route = createFileRoute("/_app/certifications/")({
 	component: RouteComponent,
@@ -8,9 +8,9 @@ export const Route = createFileRoute("/_app/certifications/")({
 
 function RouteComponent() {
 	return (
-		<div className="container space-y-6 pt-6 pb-6 lg:pt-12">
+		<div className="page-container space-y-12 pt-6 pb-6 lg:pt-12">
 			<PageHeader />
-			<ComingSoon />
+			<Certifications />
 		</div>
 	);
 }
