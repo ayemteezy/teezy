@@ -26,7 +26,7 @@ export const Projects = () => {
 	}
 
 	return (
-		<div className="mb-12 divide-y border-y">
+		<div className="mb-12 border-b">
 			{data?.map((project) => (
 				<ProjectCard key={project.id} data={project} />
 			))}

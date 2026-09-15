@@ -3,12 +3,12 @@ import type { Company } from "@/types/experience";
 export const EXPERIENCE: Company[] = [
 	{
 		company: "Self-employed",
-		abbreviation: "SE",
 		location: "Remote",
+		type: "freelance",
 		roles: [
 			{
 				role: "Web Developer",
-				type: "freelance",
+				arrangement: "remote",
 				date: {
 					start: "2026-01",
 				},
@@ -27,12 +27,12 @@ export const EXPERIENCE: Company[] = [
 
 	{
 		company: "University of Caloocan City",
-		abbreviation: "UCC",
 		location: "Caloocan City, Philippines",
+		type: "part-time",
 		roles: [
 			{
 				role: "Student Mentor",
-				type: "part-time",
+				arrangement: "onsite",
 				date: {
 					start: "2025-01",
 					end: "2025-04",
@@ -53,12 +53,12 @@ export const EXPERIENCE: Company[] = [
 
 	{
 		company: "Digital Benefits Pte. Ltd.",
-		abbreviation: "DB",
 		location: "Remote",
+		type: "internship",
 		roles: [
 			{
 				role: "Multimedia & Web Development Intern",
-				type: "internship",
+				arrangement: "remote",
 				date: {
 					start: "2024-08",
 					end: "2024-09",

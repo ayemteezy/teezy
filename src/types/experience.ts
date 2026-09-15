@@ -3,7 +3,10 @@ export type ExperienceType =
 	| "part-time"
 	| "contract"
 	| "freelance"
-	| "internship";
+	| "internship"
+	| "academic";
+
+export type ExperienceArrangement = "onsite" | "remote" | "hybrid";
 
 export type ExperienceDate = {
 	start: string; // "2025-01"
@@ -12,27 +15,15 @@ export type ExperienceDate = {
 
 export type Role = {
 	role: string;
-	type: ExperienceType;
+	arrangement: ExperienceArrangement;
 	date: ExperienceDate;
 	summary: string;
 	skills: string[];
-
-	/**
-	 * Used when this role represents a promotion
-	 * from another role at the same company.
-	 */
-	promotedFrom?: string;
 };
 
 export type Company = {
 	company: string;
 	location: string;
-
-	/**
-	 * Optional short identifier used inside
-	 * the timeline marker.
-	 */
-	abbreviation?: string;
-
+	type: ExperienceType;
 	roles: Role[];
 };
