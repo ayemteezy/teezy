@@ -36,39 +36,37 @@ export const Projects = () => {
 
 import { Skeleton } from "@/components/ui/skeleton";
 
-const ProjectCardSkeleton = () => {
+export const ProjectCardSkeleton = () => {
 	return (
-		<article className="flex gap-4 py-4">
+		<article className="flex gap-4 p-4">
 			{/* Logo */}
-			<Skeleton className="size-9 shrink-0 rounded-lg bg-muted/50" />
+			<Skeleton className="size-9 shrink-0 rounded-lg" />
 
 			{/* Content */}
 			<div className="min-w-0 flex-1">
-				{/* Header */}
-				<div className="flex items-start justify-between gap-4">
-					<div className="min-w-0 flex-1 space-y-2">
-						<Skeleton className="h-5 w-28" />
+				<div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+					{/* Project info */}
+					<div className="min-w-0 space-y-1">
+						{/* Project name */}
+						<Skeleton className="h-4 w-28" />
+
+						{/* Description */}
 						<div className="space-y-1.5">
-							<Skeleton className="h-3.5 max-w-xl" />
-							<Skeleton className="h-3.5 max-w-md" />
+							<Skeleton className="h-3.5 w-full md:w-96" />
+							<Skeleton className="h-3.5 w-3/4 md:w-72" />
 						</div>
 					</div>
-					<Skeleton className="mt-1 h-3 w-8 shrink-0" />
-				</div>
 
-				{/* Meta + Actions */}
-				<div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-					{/* Badges */}
-					<div className="flex flex-wrap gap-1.5">
-						{["tag-1", "tag-2", "tag-3"].map((key) => (
-							<Skeleton key={key} className="h-5 w-14 rounded-md" />
+					{/* Actions */}
+					<div className="flex shrink-0 items-center gap-2">
+						{["demo", "source"].map((id) => (
+							<Skeleton
+								key={id}
+								className={
+									id === "demo" ? "h-8 w-24 rounded-md" : "h-8 w-20 rounded-md"
+								}
+							/>
 						))}
-					</div>
-
-					{/* Buttons */}
-					<div className="flex shrink-0 gap-2">
-						<Skeleton className="h-8 w-24 rounded-md" />
-						<Skeleton className="h-8 w-20 rounded-md" />
 					</div>
 				</div>
 			</div>
