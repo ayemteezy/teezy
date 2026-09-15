@@ -7,7 +7,10 @@ interface StackItemProps {
 
 export const StackItemBadge = ({ data }: StackItemProps) => {
 	return (
-		<Badge variant="outline" className="px-2.5 py-3.5 text-muted-foreground">
+		<Badge
+			variant="outline"
+			className="cursor-default px-2.5 py-3.5 text-muted-foreground hover:bg-accent"
+		>
 			{data.name}
 		</Badge>
 	);

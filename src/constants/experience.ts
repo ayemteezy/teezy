@@ -1,38 +1,17 @@
-export type ExperienceType =
-	| "full-time"
-	| "part-time"
-	| "contract"
-	| "freelance"
-	| "internship";
-
-export type ExperienceDate = {
-	start: string; // e.g. "2023-01"
-	end?: string; // omit for "Present"
-};
-
-export type Role = {
-	role: string;
-	type: ExperienceType;
-	date: ExperienceDate;
-	summary: string;
-	skills: string[];
-};
-
-export type Company = {
-	company: string;
-	location: string;
-	roles: Role[];
-};
+import type { Company } from "@/types/experience";
 
 export const EXPERIENCE: Company[] = [
 	{
 		company: "Self-employed",
+		abbreviation: "SE",
 		location: "Remote",
 		roles: [
 			{
 				role: "Web Developer",
 				type: "freelance",
-				date: { start: "2026-01" },
+				date: {
+					start: "2026-01",
+				},
 				summary:
 					"Design and build web applications for clients using Next.js and React, handling everything from UI implementation to deployment.",
 				skills: [
@@ -45,47 +24,55 @@ export const EXPERIENCE: Company[] = [
 			},
 		],
 	},
+
 	{
 		company: "University of Caloocan City",
-		location: "Onsite",
+		abbreviation: "UCC",
+		location: "Caloocan City, Philippines",
 		roles: [
 			{
 				role: "Student Mentor",
-				type: "internship",
-				date: { start: "2025-01", end: "2025-04" },
+				type: "part-time",
+				date: {
+					start: "2025-01",
+					end: "2025-04",
+				},
 				summary:
-					"Mentored 3rd-year IT students on capstone projects — guiding system design, architecture, debugging, and full-stack best practices, plus documentation and presentation strategies.",
+					"Mentored 3rd-year IT students on capstone projects, guiding system design, debugging, documentation, presentation, and full-stack development practices.",
 				skills: [
 					"Mentoring",
 					"System Design",
-					"Software Architecture",
 					"Debugging",
 					"Full-Stack Development",
-					"Project Management",
 					"Technical Documentation",
+					"Problem Solving",
 				],
 			},
 		],
 	},
+
 	{
 		company: "Digital Benefits Pte. Ltd.",
+		abbreviation: "DB",
 		location: "Remote",
 		roles: [
 			{
-				role: "Multimedia & Web Development",
+				role: "Multimedia & Web Development Intern",
 				type: "internship",
-				date: { start: "2024-08", end: "2024-09" },
+				date: {
+					start: "2024-08",
+					end: "2024-09",
+				},
 				summary:
-					"QA-tested a crypto platform and game, surfacing UI/UX issues and working with developers and designers to improve responsiveness, accessibility, and overall user experience across browsers and devices.",
+					"QA-tested a crypto platform and game, identifying UI/UX issues and collaborating with developers and designers to improve responsiveness, accessibility, and overall user experience.",
 				skills: [
 					"QA Testing",
 					"Bug Tracking",
 					"Cross-Browser Testing",
-					"UI/UX Design",
+					"UI/UX",
 					"Accessibility",
 					"Responsive Design",
-					"Cross-functional Collaboration",
-					"User Feedback Analysis",
+					"Collaboration",
 				],
 			},
 		],
