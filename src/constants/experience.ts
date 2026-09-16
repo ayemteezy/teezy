@@ -22,23 +22,6 @@ export const EXPERIENCE: Company[] = [
 					"Client Communication",
 				],
 			},
-			{
-				role: "Web Developer",
-				type: "freelance",
-				arrangement: "remote",
-				date: {
-					start: "2026-01",
-				},
-				summary:
-					"Design and build web applications for clients using Next.js and React, handling everything from UI implementation to deployment.",
-				skills: [
-					"Next.js",
-					"React",
-					"TypeScript",
-					"Tailwind CSS",
-					"Client Communication",
-				],
-			},
 		],
 	},
 
