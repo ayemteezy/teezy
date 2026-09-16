@@ -18,7 +18,7 @@ export const ProjectCard = ({ data }: ProjectCardProps) => {
 								{data.name}
 							</h2>
 
-							<p className="font-sans text-[0.8125rem] text-muted-foreground leading-relaxed md:max-w-md">
+							<p className="font-sans text-[0.8125rem] text-muted-foreground leading-relaxed">
 								{data.description ?? "No description available."}
 							</p>
 						</div>
