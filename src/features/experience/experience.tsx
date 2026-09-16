@@ -1,16 +1,18 @@
 import { EXPERIENCE } from "@/constants/experience";
-import { CompanyGroup } from "./experience-group";
+import { ExperienceItem } from "./experience-item";
 
 export const Experience = () => {
 	return (
-		<div className="relative">
-			{EXPERIENCE.map((company, index) => (
-				<CompanyGroup
-					key={company.company}
-					company={company}
-					isLast={index === EXPERIENCE.length - 1}
-				/>
-			))}
+		<div>
+			<div className="space-y-12">
+				{EXPERIENCE.map((company, index) => (
+					<ExperienceItem
+						key={company.company}
+						company={company}
+						isLast={index === EXPERIENCE.length - 1}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };

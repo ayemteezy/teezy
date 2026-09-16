@@ -3,11 +3,28 @@ import type { Company } from "@/types/experience";
 export const EXPERIENCE: Company[] = [
 	{
 		company: "Self-employed",
-		location: "Remote",
-		type: "freelance",
+		location: "Caloocan City, Philippines",
 		roles: [
 			{
 				role: "Web Developer",
+				type: "freelance",
+				arrangement: "remote",
+				date: {
+					start: "2026-01",
+				},
+				summary:
+					"Design and build web applications for clients using Next.js and React, handling everything from UI implementation to deployment.",
+				skills: [
+					"Next.js",
+					"React",
+					"TypeScript",
+					"Tailwind CSS",
+					"Client Communication",
+				],
+			},
+			{
+				role: "Web Developer",
+				type: "freelance",
 				arrangement: "remote",
 				date: {
 					start: "2026-01",
@@ -28,10 +45,10 @@ export const EXPERIENCE: Company[] = [
 	{
 		company: "University of Caloocan City",
 		location: "Caloocan City, Philippines",
-		type: "part-time",
 		roles: [
 			{
 				role: "Student Mentor",
+				type: "internship",
 				arrangement: "onsite",
 				date: {
 					start: "2025-01",
@@ -53,11 +70,11 @@ export const EXPERIENCE: Company[] = [
 
 	{
 		company: "Digital Benefits Pte. Ltd.",
-		location: "Remote",
-		type: "internship",
+		location: "Caloocan City, Philippines",
 		roles: [
 			{
 				role: "Multimedia & Web Development Intern",
+				type: "internship",
 				arrangement: "remote",
 				date: {
 					start: "2024-08",

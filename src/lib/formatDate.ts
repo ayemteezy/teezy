@@ -1,5 +1,5 @@
 import { format, isSameYear, parseISO } from "date-fns";
-import type { ExperienceDate, Role } from "@/types/experience";
+import type { Company, ExperienceDate, Role } from "@/types/experience";
 
 export const formatDate = (dateStr: string) =>
 	format(parseISO(dateStr), "MMM yyyy");
@@ -57,4 +57,35 @@ export const getExperienceDuration = (date: ExperienceDate) => {
 	}
 
 	return parts.length > 0 ? parts.join(" ") : "< 1 mo";
+};
+
+export const getCompanyWorkDuration = (company: Company) => {
+	if (!company.roles.length) return "0 mos";
+
+	const starts = company.roles.map((role) => new Date(`${role.date.start}-01`));
+
+	const ends = company.roles.map((role) =>
+		role.date.end ? new Date(`${role.date.end}-01`) : new Date(),
+	);
+
+	const start = new Date(Math.min(...starts.map((date) => date.getTime())));
+
+	const end = new Date(Math.max(...ends.map((date) => date.getTime())));
+
+	const months =
+		(end.getFullYear() - start.getFullYear()) * 12 +
+		(end.getMonth() - start.getMonth());
+
+	const years = Math.floor(months / 12);
+	const remainingMonths = months % 12;
+
+	if (years && remainingMonths) {
+		return `${years} yr ${remainingMonths} mos`;
+	}
+
+	if (years) {
+		return `${years} yr`;
+	}
+
+	return `${remainingMonths} mos`;
 };

@@ -1,3 +1,4 @@
+import { getCompanyWorkDuration } from "@/lib/formatDate";
 import type { Company } from "@/types/experience";
 
 interface CompanyHeaderProps {
@@ -5,24 +6,21 @@ interface CompanyHeaderProps {
 }
 
 export const CompanyHeader = ({ company }: CompanyHeaderProps) => {
+	const totalWorkDate = getCompanyWorkDuration(company);
+
 	return (
-		<div className="flex items-start gap-4">
-			<div
-				aria-hidden="true"
-				className="flex size-11 shrink-0 items-center justify-center rounded-lg border bg-muted/30 font-pixel text-[0.6875rem]"
-			>
-				{company.abbreviation}
-			</div>
+		<header>
+			<h2 className="font-sans font-semibold text-base tracking-tight">
+				{company.company}
+			</h2>
 
-			<div className="min-w-0">
-				<h2 className="font-sans font-semibold text-base leading-5">
-					{company.company}
-				</h2>
+			<div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-muted-foreground text-xs">
+				{company.location && <span>{company.location}</span>}
 
-				<div className="mt-0.5 flex items-center gap-1.5 text-muted-foreground">
-					<span className="font-mono text-xs">{company.location}</span>
-				</div>
+				{company.location && totalWorkDate && <span aria-hidden="true">·</span>}
+
+				<span>{totalWorkDate}</span>
 			</div>
-		</div>
+		</header>
 	);
 };

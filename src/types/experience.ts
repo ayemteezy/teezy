@@ -15,6 +15,7 @@ export type ExperienceDate = {
 
 export type Role = {
 	role: string;
+	type: ExperienceType;
 	arrangement: ExperienceArrangement;
 	date: ExperienceDate;
 	summary: string;
@@ -24,6 +25,5 @@ export type Role = {
 export type Company = {
 	company: string;
 	location: string;
-	type: ExperienceType;
 	roles: Role[];
 };

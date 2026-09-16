@@ -5,7 +5,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { useRepoLogo } from "@/hooks/use-repo-logo";
+
 import { cn } from "@/lib/utils";
 import type { PinnedRepo } from "@/types/github";
 
@@ -16,13 +16,12 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ data, className }: ProjectCardProps) => {
 	const navigate = useNavigate();
-	const { src: imageSrc } = useRepoLogo(data.name);
 
 	return (
 		<Card
 			onClick={() => navigate({ to: "/projects" })}
 			className={cn(
-				"w-full cursor-pointer rounded-xl border border-border/15 px-4 py-3.5",
+				"w-full cursor-pointer rounded-xl border border-border/15 px-5 py-3.5",
 				"transition-all duration-200 ease-in-out hover:scale-105 hover:bg-accent/30 hover:shadow-md/5",
 				className,
 			)}
