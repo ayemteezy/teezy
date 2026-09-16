@@ -26,7 +26,7 @@ export const RoleItem = ({ role, hasMultipleRoles, isLast }: RoleItemProps) => {
 					{/* Role marker */}
 					<span
 						aria-hidden="true"
-						className="absolute top-1.5 left-0.5 size-2 rounded-full border border-border bg-background"
+						className="absolute top-2 left-0.5 size-2 rounded-full border border-border bg-background"
 					/>
 				</>
 			)}
@@ -35,7 +35,7 @@ export const RoleItem = ({ role, hasMultipleRoles, isLast }: RoleItemProps) => {
 				{role.role}
 			</h3>
 			{/* Date */}
-			<span className="mt-1.5 block text-muted-foreground text-xs">
+			<span className="mt-1 block text-muted-foreground text-xs">
 				{formatDateRange(role.date)} <span aria-hidden="true">·</span>{" "}
 				{getExperienceDuration(role.date)}
 			</span>
