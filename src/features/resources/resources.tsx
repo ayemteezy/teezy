@@ -3,7 +3,7 @@ import { ResourceItem } from "./resource-item";
 
 export const Resources = () => {
 	return (
-		<div className="space-y-6">
+		<div className="space-y-12">
 			{RESOURCES.map((item) => (
 				<div key={item.category} className="space-y-3">
 					<h2 className="font-medium text-muted-foreground/60 text-xs uppercase tracking-wider">

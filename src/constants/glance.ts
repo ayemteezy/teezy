@@ -1,8 +1,5 @@
 import { useModalStore } from "@/store/modal-store";
-
-export type Glance =
-	| { number: string; label: string; type: "navigate"; href: string }
-	| { number: string; label: string; type: "action"; run: () => void };
+import type { Glance } from "@/types/glance";
 
 export const GLANCE: Glance[] = [
 	{
