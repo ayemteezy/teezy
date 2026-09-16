@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { QuoteIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import type { Testimonial } from "@/constants/testimonials";
+import type { Testimonial } from "@/types/testimonial";
 
 interface TestimonialItemProps {
 	data: Testimonial;

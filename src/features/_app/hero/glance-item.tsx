@@ -1,6 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import { ArrowUpRightIcon } from "lucide-react";
-import type { Glance } from "@/constants/glance";
+import type { Glance } from "@/types/glance";
 
 interface GlanceItemProps {
 	data: Glance;
