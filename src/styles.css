@@ -195,7 +195,7 @@ main {
   }
 
   @media (min-width: 64rem) {
-    @apply max-w-200;
+    @apply max-w-240;
   }
 }
 
