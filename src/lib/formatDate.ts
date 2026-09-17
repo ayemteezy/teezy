@@ -4,6 +4,9 @@ import type { Company, ExperienceDate, Role } from "@/types/experience";
 export const formatDate = (dateStr: string) =>
 	format(parseISO(dateStr), "MMM yyyy");
 
+export const formatSpecificDate = (dateStr: string) =>
+	format(parseISO(dateStr), "MMM dd, yyyy");
+
 export const formatRoleDateRange = (date: Role["date"]) => {
 	if (!date.end) return `${formatDate(date.start)} – Present`;
 

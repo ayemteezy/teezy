@@ -15,6 +15,7 @@ import { Route as AppBlogIndexRouteImport } from './routes/_app/blog/index'
 import { Route as AppCertificationsIndexRouteImport } from './routes/_app/certifications/index'
 import { Route as AppExperienceIndexRouteImport } from './routes/_app/experience/index'
 import { Route as AppGearIndexRouteImport } from './routes/_app/gear/index'
+import { Route as AppPostSlugRouteImport } from './routes/_app/post/$slug'
 import { Route as AppProjectsIndexRouteImport } from './routes/_app/projects/index'
 import { Route as AppResourcesIndexRouteImport } from './routes/_app/resources/index'
 import { Route as AppStackIndexRouteImport } from './routes/_app/stack/index'
@@ -49,6 +50,11 @@ const AppGearIndexRoute = AppGearIndexRouteImport.update({
   path: '/gear/',
   getParentRoute: () => AppRoute,
 } as any)
+const AppPostSlugRoute = AppPostSlugRouteImport.update({
+  id: '/post/$slug',
+  path: '/post/$slug',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppProjectsIndexRoute = AppProjectsIndexRouteImport.update({
   id: '/projects/',
   path: '/projects/',
@@ -72,6 +78,7 @@ const AppTestimonialsIndexRoute = AppTestimonialsIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
+  '/post/$slug': typeof AppPostSlugRoute
   '/blog/': typeof AppBlogIndexRoute
   '/certifications/': typeof AppCertificationsIndexRoute
   '/experience/': typeof AppExperienceIndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
+  '/post/$slug': typeof AppPostSlugRoute
   '/blog': typeof AppBlogIndexRoute
   '/certifications': typeof AppCertificationsIndexRoute
   '/experience': typeof AppExperienceIndexRoute
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
   '/_app/': typeof AppIndexRoute
+  '/_app/post/$slug': typeof AppPostSlugRoute
   '/_app/blog/': typeof AppBlogIndexRoute
   '/_app/certifications/': typeof AppCertificationsIndexRoute
   '/_app/experience/': typeof AppExperienceIndexRoute
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/post/$slug'
     | '/blog/'
     | '/certifications/'
     | '/experience/'
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/post/$slug'
     | '/blog'
     | '/certifications'
     | '/experience'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/_app'
     | '/_app/'
+    | '/_app/post/$slug'
     | '/_app/blog/'
     | '/_app/certifications/'
     | '/_app/experience/'
@@ -190,6 +202,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppGearIndexRouteImport
       parentRoute: typeof AppRoute
     }
+    '/_app/post/$slug': {
+      id: '/_app/post/$slug'
+      path: '/post/$slug'
+      fullPath: '/post/$slug'
+      preLoaderRoute: typeof AppPostSlugRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/_app/projects/': {
       id: '/_app/projects/'
       path: '/projects'
@@ -223,6 +242,7 @@ declare module '@tanstack/react-router' {
 
 interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
+  AppPostSlugRoute: typeof AppPostSlugRoute
   AppBlogIndexRoute: typeof AppBlogIndexRoute
   AppCertificationsIndexRoute: typeof AppCertificationsIndexRoute
   AppExperienceIndexRoute: typeof AppExperienceIndexRoute
@@ -235,6 +255,7 @@ interface AppRouteChildren {
 
 const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
+  AppPostSlugRoute: AppPostSlugRoute,
   AppBlogIndexRoute: AppBlogIndexRoute,
   AppCertificationsIndexRoute: AppCertificationsIndexRoute,
   AppExperienceIndexRoute: AppExperienceIndexRoute,
