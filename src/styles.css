@@ -2,10 +2,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "../highlighter.css";
 
 @import "non.geist" layer(base);
 @import "non.geist/mono" layer(base);
 @import "non.geist/pixel" layer(base);
+
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 

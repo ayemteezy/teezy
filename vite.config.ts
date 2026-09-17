@@ -1,3 +1,4 @@
+import contentCollections from "@content-collections/vite";
 import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
@@ -14,13 +15,14 @@ const config = defineConfig({
 
 	resolve: { tsconfigPaths: true },
 	plugins: [
-		devtools(),
-		tailwindcss(),
-		tanstackStart(),
-    nitro({preset: "vercel"}),
-		viteReact(),
-		babel({ presets: [reactCompilerPreset()] }),
-	],
+        devtools(),
+        tailwindcss(),
+        tanstackStart(),
+        nitro({preset: "vercel"}),
+        viteReact(),
+        babel({ presets: [reactCompilerPreset()] }),
+        contentCollections()
+    ],
 });
 
 export default config;

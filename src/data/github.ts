@@ -1,16 +1,16 @@
 import { createServerFn } from "@tanstack/react-start";
 import { GITHUB } from "@/constants/configs/github.config";
 import type {
-	GetPinnedReposInput,
+	GetPortfolioReposInput,
 	GitHubLanguage,
-	GitHubPinnedReposResponse,
-	PinnedRepo,
+	GitHubPortfolioReposResponse,
+	PortfolioRepo,
 } from "@/types/github";
 
-export const getPinnedRepos = createServerFn({ method: "GET" })
-	.validator((data: GetPinnedReposInput) => data)
-	.handler(async ({ data }): Promise<PinnedRepo[]> => {
-		const limit = Math.min(Math.max(data.limit ?? 6, 1), 6);
+export const getPortfolioRepos = createServerFn({ method: "GET" })
+	.validator((data: GetPortfolioReposInput) => data)
+	.handler(async ({ data }): Promise<PortfolioRepo[]> => {
+		const limit = data.limit ?? 100;
 
 		const token = process.env.GITHUB_TOKEN;
 
@@ -26,38 +26,38 @@ export const getPinnedRepos = createServerFn({ method: "GET" })
 			},
 			body: JSON.stringify({
 				query: `
-          query PinnedRepositories($login: String!, $limit: Int!) {
-            user(login: $login) {
-              pinnedItems(
-                first: $limit
-                types: REPOSITORY
-              ) {
-                nodes {
-                  ... on Repository {
-                    id
-                    name
-                    description
-                    url
-                    homepageUrl
-                    createdAt
-
-                    languages(
-                      first: 4
-                      orderBy: {
-                        field: SIZE
-                        direction: DESC
-                      }
-                    ) {
-                      nodes {
-                        name
-                      }
+          query PortfolioRepositories(
+            $searchQuery: String!
+            $limit: Int!
+          ) {
+            search(
+              query: $searchQuery
+              type: REPOSITORY
+              first: $limit
+            ) {
+              nodes {
+                ... on Repository {
+                  id
+                  name
+                  description
+                  url
+                  homepageUrl
+                  createdAt
+                  languages(
+                    first: 4
+                    orderBy: {
+                      field: SIZE
+                      direction: DESC
                     }
-
-                    repositoryTopics(first: 5) {
-                      nodes {
-                        topic {
-                          name
-                        }
+                  ) {
+                    nodes {
+                      name
+                    }
+                  }
+                  repositoryTopics(first: 5) {
+                    nodes {
+                      topic {
+                        name
                       }
                     }
                   }
@@ -67,7 +67,7 @@ export const getPinnedRepos = createServerFn({ method: "GET" })
           }
         `,
 				variables: {
-					login: GITHUB.username,
+					searchQuery: `user:${GITHUB.username} topic:portfolio fork:false archived:false`,
 					limit,
 				},
 			}),
@@ -77,17 +77,15 @@ export const getPinnedRepos = createServerFn({ method: "GET" })
 			throw new Error(`GitHub API responded with ${response.status}`);
 		}
 
-		const json = (await response.json()) as GitHubPinnedReposResponse;
+		const json = (await response.json()) as GitHubPortfolioReposResponse;
 
 		if (json.errors?.length) {
 			throw new Error(json.errors[0]?.message ?? "GitHub GraphQL error");
 		}
 
-		if (!json.data?.user) {
-			throw new Error(`No GitHub user found for "${GITHUB.username}"`);
-		}
+		const repos = json.data?.search?.nodes ?? [];
 
-		return json.data.user.pinnedItems.nodes.map((repo) => ({
+		return repos.map((repo) => ({
 			id: repo.id,
 			name: repo.name,
 			description: repo.description,

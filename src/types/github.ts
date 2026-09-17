@@ -1,4 +1,4 @@
-export interface PinnedRepo {
+export interface PortfolioRepo {
 	id: string;
 	name: string;
 	description: string | null;
@@ -9,11 +9,11 @@ export interface PinnedRepo {
 	topics: string[];
 }
 
-export interface GetPinnedReposInput {
+export interface GetPortfolioReposInput {
 	limit?: number;
 }
 
-interface GitHubPinnedRepo {
+interface GitHubPortfolioRepo {
 	id: string;
 	name: string;
 	description: string | null;
@@ -34,13 +34,11 @@ interface GitHubPinnedRepo {
 	};
 }
 
-export interface GitHubPinnedReposResponse {
+export interface GitHubPortfolioReposResponse {
 	data?: {
-		user: {
-			pinnedItems: {
-				nodes: GitHubPinnedRepo[];
-			};
-		} | null;
+		search: {
+			nodes: GitHubPortfolioRepo[];
+		};
 	};
 	errors?: {
 		message: string;
