@@ -12,13 +12,13 @@ export const ConnectCard = () => {
 	return (
 		<Card
 			onClick={() => navigate({ to: "/contact" })}
-			className="group relative col-span-7 min-h-70 cursor-pointer border bg-transparent p-0 text-center ring-0 md:col-span-1 lg:col-span-4"
+			className="group relative col-span-7 min-h-70 cursor-pointer border bg-transparent p-0 text-center ring-0 md:col-span-1 lg:col-span-5"
 		>
 			<Loop className="absolute top-0 left-1/2 w-250 max-w-none -translate-x-1/2 text-muted opacity-100 duration-0 group-hover:text-blue-500 group-hover:opacity-25 group-hover:duration-1500 group-hover:ease-in-out" />
 			{/* fade in bottom right */}
 			<div
 				aria-hidden
-				className="absolute -right-50 -bottom-50 z-15 size-100 rounded-full bg-blue-400/10 opacity-0 blur-2xl transition-all duration-200 ease-in-out group-hover:opacity-100 dark:bg-white/3"
+				className="pointer-events-none absolute -right-50 -bottom-50 z-15 size-100 rounded-full bg-blue-400/10 opacity-0 blur-2xl transition-all duration-200 ease-in-out group-hover:opacity-100 dark:bg-white/3"
 			/>
 			<Button
 				variant="secondary"
@@ -68,7 +68,7 @@ export const ConnectCard = () => {
 				className="absolute top-4 left-1/2 translate-x-60 rounded-full border border-blue-400 shadow transition-all ease-in group-hover:opacity-500 group-hover:delay-300 group-hover:duration-300 lg:opacity-0"
 			/>
 			<CardHeader className="absolute bottom-4 z-10 w-full">
-				<p className="font-mono text-[13px] text-muted-foreground uppercase transition-colors duration-500 ease-in group-hover:text-blue-400">
+				<p className="font-mono text-muted-foreground text-xs uppercase transition-colors duration-500 ease-in group-hover:text-blue-400">
 					from idea to product
 				</p>
 				<CardTitle className="text-foreground/85 text-lg">

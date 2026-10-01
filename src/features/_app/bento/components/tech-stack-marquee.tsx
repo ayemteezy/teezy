@@ -38,7 +38,7 @@ const TechItem = ({
 	theme: string;
 }) => {
 	return (
-		<div className="flex cursor-default items-center gap-2 rounded-sm border border-t-foreground/35 bg-accent/50 px-2 py-1 transition-colors duration-200 hover:bg-accent">
+		<div className="flex cursor-default items-center gap-2 rounded-sm border bg-accent/50 px-2 py-1 transition-colors duration-200 hover:bg-accent group-hover:border-blue-300 dark:border-border dark:border-t-foreground/35">
 			<StackIcon
 				name={item.name}
 				variant={theme === "dark" ? "dark" : "light"}

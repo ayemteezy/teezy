@@ -7,77 +7,122 @@ const TranslucentBox = ({
 	size = 300,
 	className = "",
 }: TranslucentBoxProps) => {
+	const viewBoxWidth = 450;
+	const viewBoxHeight = 181;
+
 	return (
 		<svg
-			viewBox="0 0 400 300"
+			viewBox="0 0 450 181"
 			width={size}
-			height={size * 0.75}
-			className={className}
+			height={size * (viewBoxHeight / viewBoxWidth)}
+			className={`text-neutral-600 ${className}`}
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true"
 		>
 			<defs>
-				{/* Subtle gray panels */}
-				<linearGradient id="box-panel" x1="0%" y1="0%" x2="0%" y2="100%">
-					<stop offset="0%" stopColor="#ffffff" stopOpacity="0.11" />
-					<stop offset="100%" stopColor="#ffffff" stopOpacity="0.07" />
+				{/* Rear flaps */}
+				<linearGradient id="box-rear-flap" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stopColor="currentColor" stopOpacity="0.48" />
+					<stop offset="100%" stopColor="currentColor" stopOpacity="0.32" />
 				</linearGradient>
 
-				{/* Dark body */}
-				<linearGradient id="box-body" x1="0%" y1="0%" x2="0%" y2="100%">
-					<stop offset="0%" stopColor="#ffffff" stopOpacity="0.09" />
-					<stop offset="100%" stopColor="#ffffff" stopOpacity="0.045" />
+				{/* Front flap */}
+				<linearGradient id="box-front-flap" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stopColor="currentColor" stopOpacity="0.55" />
+					<stop offset="100%" stopColor="currentColor" stopOpacity="0.38" />
+				</linearGradient>
+
+				{/* Main box */}
+				<linearGradient id="box-body" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stopColor="#555557" stopOpacity="0.48" />
+					<stop offset="55%" stopColor="#353537" stopOpacity="0.38" />
+					<stop offset="100%" stopColor="#1f1f21" stopOpacity="0.24" />
+				</linearGradient>
+
+				{/* Inside opening */}
+				<linearGradient id="box-opening" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stopColor="currentColor" stopOpacity="0.52" />
+					<stop offset="100%" stopColor="currentColor" stopOpacity="0.38" />
 				</linearGradient>
 			</defs>
 
-			{/* Back flaps */}
-			<polygon
-				points="105,70 75,70 30,52 70,32 105,50"
-				fill="url(#box-panel)"
-				stroke="#ffffff"
-				strokeOpacity="0.10"
+			{/* Back left flap */}
+			<path
+				d="
+          M110 53
+          L80 53
+          L34 31
+          Q29 28 34 24
+          L57 13
+          Q62 11 67 14
+          L110 37
+          Z
+        "
+				fill="url(#box-rear-flap)"
+				stroke="currentColor"
+				strokeOpacity="0.28"
+				strokeLinejoin="round"
 			/>
 
-			<polygon
-				points="295,70 325,70 372,52 335,32 295,50"
-				fill="url(#box-panel)"
-				stroke="#ffffff"
-				strokeOpacity="0.10"
+			{/* Back right flap */}
+			<path
+				d="
+          M340 53
+          L370 53
+          L416 31
+          Q421 28 416 24
+          L393 13
+          Q388 11 383 14
+          L340 37
+          Z
+        "
+				fill="url(#box-rear-flap)"
+				stroke="currentColor"
+				strokeOpacity="0.28"
+				strokeLinejoin="round"
 			/>
 
 			{/* Main box */}
-			<polygon
-				points="75,70 325,70 325,220 75,220"
-				fill="url(#box-body)"
-				stroke="#ffffff"
-				strokeOpacity="0.08"
-			/>
-
-			{/* Inner top opening */}
-			<polygon
-				points="105,50 295,50 325,70 75,70"
-				fill="url(#box-panel)"
-				stroke="#ffffff"
-				strokeOpacity="0.12"
-			/>
-
-			{/* Front flap */}
-			<polygon
-				points="75,70 30,120 370,120 325,70"
-				fill="url(#box-panel)"
-				stroke="#fff"
-				strokeOpacity="0.18"
-			/>
-
-			{/* Front face */}
 			<rect
-				x="75"
-				y="70"
-				width="250"
+				x="80"
+				y="53"
+				width="290"
 				height="150"
 				fill="url(#box-body)"
-				stroke="#fff"
-				strokeOpacity="0.14"
+				stroke="#777779"
+				strokeOpacity="0.22"
+			/>
+
+			{/* Inside opening */}
+			<path
+				d="
+          M110 31
+          H340
+          L370 53
+          H80
+          Z
+        "
+				fill="url(#box-opening)"
+				stroke="currentColor"
+				strokeOpacity="0.28"
+				strokeLinejoin="round"
+			/>
+
+			{/* Front flap — in front of the box */}
+			<path
+				d="
+          M80 53
+          L46 112
+          Q43 117 48 121
+          H402
+          Q407 117 404 112
+          L370 53
+          Z
+        "
+				fill="url(#box-front-flap)"
+				stroke="currentColor"
+				strokeOpacity="0.30"
+				strokeLinejoin="round"
 			/>
 		</svg>
 	);

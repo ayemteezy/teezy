@@ -1,12 +1,14 @@
 import { ConnectCard } from "./components/connect-card";
+import { FeatureCard } from "./components/feature-card";
 import { TechStackCard } from "./components/tech-stack-card";
 
 export const Bento = () => {
 	return (
 		<div className="border-y">
-			<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-7">
+			<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-9">
 				<ConnectCard />
 				<TechStackCard />
+				<FeatureCard />
 			</div>
 		</div>
 	);
