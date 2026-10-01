@@ -1,41 +1,34 @@
-import { getPortfolioRepos } from "@/data/github";
 import { useModalStore } from "@/store/modal-store";
-import type { Glance } from "@/types/glance";
-import { AWARDS } from "./awards";
-import { CERTIFICATIONS } from "./certifications";
-import { HACKATHONS } from "./hackathons";
 
-const totalItemsCount = CERTIFICATIONS.reduce((sum, category) => {
-	return sum + (category.items?.length || 0);
-}, 0);
-
-const formattedTotal =
-	totalItemsCount < 10 ? `0${totalItemsCount}` : `${totalItemsCount}`;
-
-const projects = await getPortfolioRepos({ data: {} });
-export const GLANCE: Glance[] = [
+export const GLANCE = [
 	{
-		number: `0${projects.length}`,
-		label: "projects",
-		type: "navigate",
-		href: "/projects",
-	},
-	{
-		number: `0${HACKATHONS.length}`,
+		number: "0",
 		label: "hackathons",
+		title: "Built & Shipped",
+		color: "bg-emerald-500",
+		description: "Projects & builds.",
+		suffix: "hackathons joined",
 		type: "action",
 		run: () => useModalStore.getState().open("hackathons"),
 	},
 	{
-		number: `0${AWARDS.length}`,
+		number: "0",
 		label: "recognitions",
+		title: "Recognized Work",
+		color: "bg-orange-500",
+		description: "Creativity & impact.",
+		suffix: "awards received",
 		type: "action",
 		run: () => useModalStore.getState().open("recognitions"),
 	},
 	{
-		number: `${formattedTotal}`,
+		number: "0",
 		label: "certifications",
+		title: "Verified Expertise",
+		color: "bg-blue-500",
+		description: "Credentials & learning.",
+		suffix: "certifications earned",
 		type: "navigate",
 		href: "/certifications",
 	},
-];
+] as const;

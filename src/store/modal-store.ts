@@ -1,4 +1,3 @@
-// store/modal-store.ts
 import { create } from "zustand";
 
 export type ModalType = "hackathons" | "recognitions";

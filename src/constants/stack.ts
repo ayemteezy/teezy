@@ -1,60 +1,42 @@
-import type { StackCategory } from "@/types/stack";
-
-export const STACK: StackCategory[] = [
+export const STACK = [
 	{
-		label: "frontend",
-		stack: [
-			{ name: "JavaScript", pinned: true },
-			{ name: "TypeScript", pinned: true },
-			{ name: "React", pinned: true },
-			{ name: "Next.js", pinned: true },
-			{ name: "TanStack Start", pinned: true },
-			{ name: "TanStack Router" },
-			{ name: "TanStack Query", pinned: true },
-			{ name: "React Native", pinned: true },
-			{ name: "Expo" },
-			{ name: "Tailwind CSS", pinned: true },
-			{ name: "Styled Components" },
-			{ name: "HTML" },
+		category: "frontend",
+		items: [
+			{ name: "react", label: "React" },
+			{ name: "nextjs2", label: "Next.js" },
+			{ name: "tanstack", label: "TanStack Start" },
+			{ name: "typescript", label: "TypeScript" },
+			{ name: "javascript", label: "JavaScript" },
+			{ name: "tailwindcss", label: "Tailwind CSS" },
+			{ name: "html5", label: "HTML5" },
+			{ name: "css3", label: "CSS3" },
+			{ name: "shadcnui", label: "shadcn/ui" },
+			{ name: "radixui", label: "Radix UI" },
+			{ name: "motion", label: "Motion" },
+			{ name: "zustand", label: "Zustand" },
 		],
 	},
 	{
-		label: "backend",
-		stack: [
-			{ name: "Node.js", pinned: true },
-			{ name: "Bun", pinned: true },
-			{ name: "Express.js" },
-			{ name: "Prisma" },
-			{ name: "Drizzle ORM" },
-			{ name: "PostgreSQL", pinned: true },
-			{ name: "MongoDB" },
-			{ name: "MySQL" },
-			{ name: "REST" },
-			{ name: "GraphQL" },
+		category: "backend",
+		items: [
+			{ name: "nodejs", label: "Node.js" },
+			{ name: "bunjs", label: "Bun" },
+			{ name: "firebase", label: "Firebase" },
+			{ name: "supabase", label: "Supabase" },
+			{ name: "convex", label: "Convex" },
+			{ name: "clerk", label: "Clerk" },
 		],
 	},
 	{
-		label: "devops & cloud",
-		stack: [{ name: "Docker" }, { name: "GitHub Actions" }],
-	},
-	{
-		label: "developer tools",
-		stack: [
-			{ name: "Git", pinned: true },
-			{ name: "GitHub", pinned: true },
-			{ name: "VS Code", pinned: true },
-			{ name: "Zed" },
-			{ name: "Neovim" },
-			{ name: "Biome", pinned: true },
-			{ name: "ESLint" },
-			{ name: "Prettier" },
-			{ name: "Webpack" },
-			{ name: "Vite" },
-			{ name: "Figma" },
+		category: "database & others",
+		items: [
+			{ name: "mysql", label: "MySQL" },
+			{ name: "mariadb", label: "MariaDB" },
+			{ name: "postgresql", label: "PostgreSQL" },
+			{ name: "postman", label: "Postman" },
+			{ name: "npm", label: "npm" },
+			{ name: "prisma", label: "Prisma" },
+			{ name: "drizzle", label: "Drizzle" },
 		],
 	},
-	{
-		label: "deployment",
-		stack: [{ name: "Vercel", pinned: true }, { name: "Netlify" }],
-	},
-];
+] as const;
