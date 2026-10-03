@@ -28,7 +28,7 @@ export const Hero = () => {
 						<Highlight />
 
 						<div className="flex w-full flex-col items-center">
-							<h1 className="mt-4 max-w-4xl font-heading font-semibold text-3xl leading-[0.95] tracking-[-0.035em] sm:mt-5 sm:text-5xl md:text-6xl lg:text-7xl">
+							<h1 className="mt-4 max-w-4xl font-heading font-semibold text-4xl leading-[0.95] tracking-[-0.035em] sm:mt-5 sm:text-5xl md:text-6xl lg:text-7xl">
 								Building clean
 								<br />
 								<AuroraText className="italic">web experiences.</AuroraText>

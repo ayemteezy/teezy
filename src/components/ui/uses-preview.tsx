@@ -6,7 +6,7 @@ import { useTheme } from "@/providers/theme-provider";
 export const UsesPreview = () => {
 	const { theme } = useTheme();
 	return (
-		<div className="flex h-[75%] items-center justify-center gap-3">
+		<div className="flex h-[85%] items-center justify-center gap-3">
 			{USES_PREVIEW.map((item, index) => (
 				<div
 					key={item}

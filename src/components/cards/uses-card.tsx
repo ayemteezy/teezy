@@ -1,12 +1,11 @@
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { UsesPreview } from "./uses-preview";
+import { UsesPreview } from "../ui/uses-preview";
 
 export const UsesCard = () => {
 	return (
 		<Card className="group relative col-span-7 min-h-70 cursor-pointer border bg-transparent p-0 ring-0 md:col-span-2 lg:col-span-3">
-			{" "}
 			{/* fade in bottom right */}
 			<div
 				aria-hidden
@@ -15,7 +14,7 @@ export const UsesCard = () => {
 			<Button
 				variant="secondary"
 				size="icon"
-				className="transform-flat absolute right-4 bottom-4 z-15 translate-y-full rounded-full p-5 opacity-0 shadow-xs transition-all duration-25 ease-out hover:bg-secondary group-hover:translate-y-0 group-hover:opacity-100"
+				className="transform-flat absolute right-4 bottom-14 z-15 translate-y-full rounded-full p-5 shadow-xs transition-all duration-25 ease-out hover:bg-secondary group-hover:translate-y-0 group-hover:opacity-100 lg:bottom-4 lg:opacity-0"
 			>
 				<ArrowRightIcon className="size-4" />
 			</Button>

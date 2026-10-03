@@ -188,10 +188,10 @@
 }
 
 @utility container {
-  @apply mx-auto w-full px-4;
+  @apply mx-auto w-full px-1;
 
   @media (width >= theme(--breakpoint-sm)) {
-    @apply px-6;
+    @apply px-4;
   }
 
   @media (width >= theme(--breakpoint-md)) {

@@ -1,8 +1,8 @@
-import { ConnectCard } from "./components/connect-card";
-import { FeatureCard } from "./components/feature-card";
-import { GlobeCard } from "./components/globe-card";
-import { TechStackCard } from "./components/tech-stack-card";
-import { UsesCard } from "./components/uses-card";
+import { ConnectCard } from "@/components/cards/connect-card";
+import { FeatureCard } from "@/components/cards/feature-card";
+import { GlobeCard } from "@/components/cards/globe-card";
+import { TechStackCard } from "@/components/cards/tech-stack-card";
+import { UsesCard } from "@/components/cards/uses-card";
 
 export const Bento = () => {
 	return (

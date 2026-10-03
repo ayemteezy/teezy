@@ -71,7 +71,7 @@ export const GlobeCard = () => {
 					Open to remote work.
 				</CardTitle>
 			</CardHeader>
-			<div className="absolute -bottom-15 md:-bottom-25 lg:-bottom-45">
+			<div className="pointer-events-none absolute -bottom-20 md:-bottom-25 lg:pointer-events-auto lg:-bottom-45">
 				<Globe
 					markers={MARKERS}
 					arcs={ARCS}

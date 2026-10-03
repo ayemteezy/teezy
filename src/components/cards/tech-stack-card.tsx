@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { TechStackMarquee } from "./tech-stack-marquee";
+import { TechStackMarquee } from "../ui/tech-stack-marquee";
 
 export const TechStackCard = () => {
 	return (

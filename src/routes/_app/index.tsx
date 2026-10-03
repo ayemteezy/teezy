@@ -10,7 +10,7 @@ export const Route = createFileRoute("/_app/")({
 function RouteComponent() {
 	return (
 		<div className="container relative">
-			<div className="border-x px-2 lg:px-6">
+			<div className="border-x px-3 lg:px-6">
 				<div className="space-y-24 border-x">
 					{/* Top blur */}
 					<div
