@@ -44,7 +44,7 @@ const TechItem = ({
 				variant={theme === "dark" ? "dark" : "light"}
 				className="size-4"
 			/>
-			<p className="font-mono">{item.label}</p>
+			<p className="font-mono text-xs">{item.label}</p>
 		</div>
 	);
 };
