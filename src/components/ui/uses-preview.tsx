@@ -15,9 +15,9 @@ export const UsesPreview = () => {
 						index === 2 &&
 							"mx-1 scale-115 group-hover:-translate-y-2 group-hover:border-blue-400",
 						(index === 1 || index === 3) &&
-							"delay-200 group-hover:-translate-y-2 group-hover:border-blue-400",
+							"delay-150 group-hover:-translate-y-2 group-hover:border-blue-400",
 						(index === 0 || index === 4) &&
-							"delay-400 group-hover:-translate-y-2 group-hover:border-blue-400",
+							"delay-250 group-hover:-translate-y-2 group-hover:border-blue-400",
 					)}
 				>
 					<div className="rounded-xl border bg-accent/50 p-4">

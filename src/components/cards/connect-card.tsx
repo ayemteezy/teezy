@@ -23,7 +23,7 @@ export const ConnectCard = () => {
 			<Button
 				variant="secondary"
 				size="icon"
-				className="transform-flat absolute right-4 bottom-14 z-15 translate-y-full rounded-full p-5 shadow-xs transition-all duration-25 ease-out hover:bg-secondary group-hover:translate-y-0 group-hover:opacity-100 lg:bottom-4 lg:opacity-0"
+				className="transform-flat pointer-events-none absolute right-4 bottom-14 z-15 translate-y-full rounded-full p-5 shadow-xs transition-all duration-50 ease-out hover:bg-secondary group-hover:translate-y-0 group-hover:opacity-100 lg:bottom-4 lg:opacity-0"
 			>
 				<ArrowRightIcon className="size-4" />
 			</Button>

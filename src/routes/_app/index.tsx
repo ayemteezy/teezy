@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CTA } from "@/components/ui/cta";
 import { Bento } from "@/features/_app/bento";
 import { Hero } from "@/features/_app/hero";
+import { Projects } from "@/features/_app/projects";
 
 export const Route = createFileRoute("/_app/")({
 	component: RouteComponent,
@@ -22,6 +23,7 @@ function RouteComponent() {
 						<CTA />
 					</div>
 					<Bento />
+					<Projects />
 				</div>
 			</div>
 		</div>
